@@ -1,0 +1,208 @@
+# ClinCurate project schema: pediatric foot and ankle phenotypes
+# Unit of annotation: one clinical note.
+# Every field lives inside a domain. The annotator first answers the
+# "documented domains" screening question; fields in unchecked domains
+# export as "Not documented" without the annotator touching them.
+
+project:
+  id: peds_foot_ankle_v1
+  title: Pediatric foot and ankle abstraction
+  unit: note
+  mode: gold_standard          # gold_standard hides all model output
+  missing_values:
+    not_documented: Not documented
+    unclear: Unclear
+    not_applicable: Not applicable
+
+evidence:
+  # One span question over the full note. Labels are domains, not variables,
+  # so the student highlights a sentence once and it covers every field in it.
+  labels_from: domains
+
+focus_mode:
+  context_sentences_before: 1
+  context_sentences_after: 1
+  merge_overlapping: true
+  max_snippets_per_domain: 6
+
+regex_cues:
+  - name: angle_measurement
+    domain: rom
+    pattern: '(?i)[-+]?\d{1,3}\s*(?:°|deg(?:ree)?s?\b)'
+  - name: df_numeric
+    domain: rom
+    pattern: '(?i)\b(?:DF|dorsiflexion)\s*(?:of|to|is|=|:)?\s*[-+]?\d{1,3}(?:\s*(?:°|deg(?:ree)?s?\b))?'
+  - name: to_neutral
+    domain: rom
+    pattern: '(?i)\b(?:to|past|short of|lacks?(?: \d{1,2} degrees)? to)\s+neutral\b'
+  - name: frequency
+    domain: brace_use
+    pattern: '(?i)\b\d+\s*(?:nights?|days?|hours?|hrs?)\s*(?:per|a|/)\s*(?:week|wk|night|day)\b'
+  - name: fpa_value
+    domain: gait
+    pattern: '(?i)\bFPA\b[^.]{0,20}?\d{1,2}'
+
+domains:
+  orthosis:
+    label: Orthosis and casting
+    color: '#fde68a'
+    cues: [AFO, AFOs, ankle foot orthosis, ankle-foot orthosis, night splint,
+           night splints, nighttime brace, night brace, SMO, SMOs,
+           supramalleolar, serial cast, serial casting, casting, cast, brace,
+           bracing, orthotic, orthotics, insert, inserts, UCBL, DAFO]
+    fields:
+      brace_type:
+        label: Current orthosis or casting
+        type: multi_choice
+        help: >
+          Select every device the patient is currently using or starting at
+          this visit. Pick "AFO timing unspecified" when the note says AFO
+          without saying day or night. "Night splint" counts as Nighttime
+          AFO. Worn both day and night: select both.
+        values: [Nighttime AFO, Daytime AFO, AFO timing unspecified, SMO,
+                 Serial casting, Foot orthotic or insert, Other, None]
+        allow: [unclear]
+      brace_status:
+        label: Status of the primary device
+        type: single_choice
+        values: [Newly prescribed, Continuing, Discontinued, Recommended but declined]
+        allow: [unclear]
+
+  brace_use:
+    label: Brace use and tolerance
+    color: '#fed7aa'
+    cues: [wearing, wears, wear, compliance, compliant, adherence, adherent,
+           tolerating, tolerates, tolerate, not wearing, refuses, per night,
+           nights per week, hours per day]
+    fields:
+      adherence:
+        label: Adherence
+        type: single_choice
+        values: [Good or as prescribed, Partial, Poor or not wearing]
+        allow: [unclear]
+      tolerance_problem:
+        label: Tolerance problems
+        type: multi_choice
+        values: [Skin irritation or pressure, Pain, Sleep disruption, Outgrown or poor fit, None reported]
+        allow: [unclear]
+
+  rom:
+    label: Range of motion and contracture
+    color: '#bfdbfe'
+    cues: [dorsiflexion, DF, plantarflexion, PF, neutral, Silfverskiold,
+           knee extended, knee straight, knee flexed, knee bent, equinus,
+           contracture, heel cord, Achilles, gastrocnemius, gastroc, tight]
+    fields:
+      df_knee_extended_left:
+        label: Left ankle DF, knee extended (degrees)
+        type: numeric
+        units: degrees
+        range: [-60, 60]
+        help: >
+          Degrees past neutral are positive. "Lacks 10 to neutral" is -10.
+          "To neutral" is 0. If the note gives one value without knee
+          position, record it under knee extended and tick "position not
+          stated" in the comment.
+      df_knee_extended_right:
+        label: Right ankle DF, knee extended (degrees)
+        type: numeric
+        units: degrees
+        range: [-60, 60]
+      df_knee_flexed_left:
+        label: Left ankle DF, knee flexed (degrees)
+        type: numeric
+        units: degrees
+        range: [-60, 60]
+      df_knee_flexed_right:
+        label: Right ankle DF, knee flexed (degrees)
+        type: numeric
+        units: degrees
+        range: [-60, 60]
+      equinus_type:
+        label: Equinus
+        type: single_choice
+        values: [Fixed, Flexible or dynamic, Absent, Present type not stated]
+        allow: [unclear]
+
+  gait:
+    label: Gait
+    color: '#bbf7d0'
+    cues: [toe walking, toe walk, toe walks, toe-walking, toe-walker,
+           tiptoe, heel strike, heel-toe, heel toe, gait, walks, ambulates,
+           foot progression angle, FPA, in-toeing, out-toeing, intoeing,
+           asymmetric, limp, balance, improved, improving, worse, worsened,
+           stable, unchanged, since last visit, compared with]
+    fields:
+      toe_walking:
+        label: Toe walking
+        type: single_choice
+        values: [Constant, Intermittent, Absent, Present frequency not stated]
+        allow: [unclear]
+      heel_strike:
+        label: Heel strike
+        type: single_choice
+        values: [Present, Present only when prompted, Absent]
+        allow: [unclear]
+      gait_change:
+        label: Gait compared with prior visit
+        type: single_choice
+        values: [Improved, Stable, Worsened, No comparison made]
+        allow: [unclear]
+
+  alignment_imaging:
+    label: Alignment and imaging
+    color: '#e9d5ff'
+    cues: [valgus, varus, pes planus, planovalgus, flatfoot, flat foot,
+           cavus, cavovarus, calcaneal pitch, tibiotalar, talus, talar,
+           radiograph, radiographs, x-ray, xray, XR, standing films,
+           physis, physes, growth plate]
+    fields:
+      hindfoot_alignment:
+        label: Hindfoot alignment
+        type: single_choice
+        values: [Neutral, Valgus, Varus]
+        allow: [unclear]
+      arch:
+        label: Arch
+        type: single_choice
+        values: [Normal, Planus, Cavus]
+        allow: [unclear]
+      imaging_reviewed:
+        label: Foot or ankle imaging reviewed at this visit
+        type: single_choice
+        values: ['Yes', 'No']
+
+  escalation:
+    label: Treatment escalation
+    color: '#fecaca'
+    cues: [surgery, surgical, operative, lengthening, Achilles lengthening,
+           TAL, tendo-Achilles, gastrocnemius recession, Strayer, Vulpius,
+           botox, botulinum, refer, referral, consider]
+    fields:
+      escalation:
+        label: Escalation discussed or performed
+        type: multi_choice
+        values: [Serial casting recommended, Serial casting performed,
+                 Botulinum toxin, Surgery discussed, Surgery scheduled,
+                 Surgery performed, None]
+        allow: [unclear]
+      procedure:
+        label: Procedure named
+        type: single_choice
+        values: [Achilles lengthening, Gastrocnemius recession, Other, None named]
+        allow: [unclear]
+
+record_questions:
+  note_usable:
+    label: Is this note usable?
+    type: single_choice
+    values: ['Yes', 'No, wrong patient or specialty', 'No, template or empty', 'No, other']
+  needs_review:
+    label: Flag for review
+    type: multi_choice
+    values: [Unsure about an answer, Conflicting statements in note, Schema does not fit]
+    required: false
+  comment:
+    label: Comment
+    type: text
+    required: false

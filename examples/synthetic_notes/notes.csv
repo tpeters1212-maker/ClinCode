@@ -1,0 +1,34 @@
+note_id,patient_id,note_date,note_type,text
+SYN-001,P01,2024-01-10,Clinic note,"HISTORY: 4 yo with idiopathic toe walking. Parents report he toe walks most of the time at home.
+EXAM: Ankle dorsiflexion with knee extended is 0 degrees bilaterally. With knee flexed, DF to 10 degrees bilaterally. No hindfoot valgus.
+GAIT: Constant toe walking; able to heel strike when prompted.
+PLAN: Start bilateral nighttime AFOs, wear every night. Home stretching program. Return in 3 months."
+SYN-002,P01,2024-04-12,Clinic note,"Returns for follow-up of idiopathic toe walking. Mom states he is wearing the night splints about 5 nights per week. Some redness over the dorsum of the foot, resolved after adjusting straps.
+Exam: Dorsiflexion with knee straight is 5° on the right and 5° on the left. Knee bent, 15 degrees bilaterally.
+Gait: intermittent toe walking, heel strike present most of the time. Improved compared with last visit.
+Plan: continue nighttime AFO."
+SYN-003,P02,2024-02-02,Clinic note,"7 y.o. female with bilateral heel cord tightness. She has AFOs from an outside provider but family unsure when she is supposed to wear them. She reports she is not wearing them much.
+Right ankle lacks 10 degrees to neutral with the knee extended; left lacks 5 to neutral. Silfverskiold test positive bilaterally.
+Toe walks constantly. No heel strike observed.
+Discussed serial casting versus continued bracing. Family would like to try serial casting."
+SYN-004,P02,2024-03-01,Procedure note,Serial casting #2 of 3. Right leg short leg cast applied in maximal dorsiflexion. Right DF prior to cast application 0 degrees with knee extended. Skin intact. Tolerating casts well.
+SYN-005,P03,2024-05-20,Clinic note,"11 yo male with cerebral palsy, spastic diplegia, and progressive equinus. Currently in daytime AFOs (hinged) and SMOs for school.
+DF knee extended: -15 L, -20 R. Fixed equinus, does not correct with knee flexion.
+Standing radiographs reviewed: calcaneal pitch decreased, moderate planovalgus alignment bilaterally.
+Given failure of bracing and casting, we discussed gastrocnemius recession versus Achilles lengthening. Surgery scheduled for June."
+SYN-006,P04,2024-06-11,Clinic note,"Well appearing 3 year old referred for flat feet. Flexible pes planus with normal arch on toe rise. Hindfoot valgus corrects on toe stance. Ankle ROM full.
+Gait: heel-toe gait, mild out-toeing, FPA approx 15 degrees external bilaterally.
+No orthotics needed at this time. Reassurance provided."
+SYN-007,P05,2024-07-08,Clinic note,"Follow up tiptoe gait. Wears brace at night per dad, but also sometimes during the day at school. Dad says the AFO is getting small.
+DF 5 with knee extended, bilateral.
+Toe walking intermittent. Stable from prior.
+Plan: new AFOs molded today. Will reassess need for casting next visit."
+SYN-008,P06,2024-08-15,Telephone note,Called family to confirm appointment. No questions. Appointment confirmed for 8/22.
+SYN-009,P07,2024-09-03,Clinic note,"9 yo female with cavovarus foot, suspected CMT, referred by neurology. Hindfoot varus, not correctable on Coleman block. High arch.
+DF 10 degrees knee extended on the right; left not examined due to pain from recent ankle sprain.
+Gait: supinated, no toe walking.
+Plan: custom foot orthotic with lateral posting. Genetics referral. Consider surgery if progressive."
+SYN-010,P01,2024-10-15,Clinic note,"Idiopathic toe walking follow-up. Stopped wearing the nighttime AFOs 2 months ago because it was waking him up at night.
+Exam: ankle dorsiflexion 10 degrees with knee extended bilaterally, 20 degrees knee flexed.
+Now walks with heel strike, rare toe walking. Improved.
+No further bracing. Follow up as needed."
