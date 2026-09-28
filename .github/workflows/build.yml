@@ -22,13 +22,40 @@ jobs:
       matrix:
         os: [windows-latest, macos-latest]
     runs-on: ${{ matrix.os }}
+    env:
+      # Signing turns on automatically once these repository secrets exist.
+      HAS_MAC_SIGNING: ${{ secrets.MACOS_CERT_P12 != '' && secrets.APPLE_ID != '' }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
       - run: pip install -e ".[dev]"
+      - name: Import Developer ID certificate
+        if: runner.os == 'macOS' && env.HAS_MAC_SIGNING == 'true'
+        env:
+          CERT_P12: ${{ secrets.MACOS_CERT_P12 }}
+          CERT_PASSWORD: ${{ secrets.MACOS_CERT_PASSWORD }}
+        run: |
+          KC="$RUNNER_TEMP/signing.keychain-db"; KCPASS="$(uuidgen)"
+          echo "$CERT_P12" | base64 --decode > "$RUNNER_TEMP/cert.p12"
+          security create-keychain -p "$KCPASS" "$KC"
+          security set-keychain-settings -lut 3600 "$KC"
+          security unlock-keychain -p "$KCPASS" "$KC"
+          security import "$RUNNER_TEMP/cert.p12" -k "$KC" -P "$CERT_PASSWORD" -T /usr/bin/codesign
+          security set-key-partition-list -S apple-tool:,apple: -s -k "$KCPASS" "$KC"
+          security list-keychains -d user -s "$KC" $(security list-keychains -d user | tr -d '"')
+          rm "$RUNNER_TEMP/cert.p12"
+          IDENTITY=$(security find-identity -v -p codesigning "$KC" | grep "Developer ID Application" | head -1 | sed -E 's/.*"(.*)"/\1/')
+          test -n "$IDENTITY"
+          echo "CODESIGN_IDENTITY=$IDENTITY" >> "$GITHUB_ENV"
       - run: pyinstaller --noconfirm packaging/clincurate.spec
+      - name: Sign app bundle
+        if: runner.os == 'macOS' && env.HAS_MAC_SIGNING == 'true'
+        run: |
+          codesign --force --deep --options runtime --timestamp \
+            --entitlements packaging/entitlements.plist --sign "$CODESIGN_IDENTITY" dist/ClinCurate.app
+          codesign --verify --deep --strict --verbose=2 dist/ClinCurate.app
       # Standard drag-to-Applications disk image
       - if: runner.os == 'macOS'
         run: |
@@ -36,6 +63,18 @@ jobs:
           cp -R dist/ClinCurate.app dmg/
           ln -s /Applications dmg/Applications
           hdiutil create -volname ClinCurate -srcfolder dmg -ov -format UDZO dist/ClinCurate.dmg
+      - name: Notarize and staple
+        if: runner.os == 'macOS' && env.HAS_MAC_SIGNING == 'true'
+        env:
+          APPLE_ID: ${{ secrets.APPLE_ID }}
+          APPLE_APP_PASSWORD: ${{ secrets.APPLE_APP_PASSWORD }}
+          APPLE_TEAM_ID: ${{ secrets.APPLE_TEAM_ID }}
+        run: |
+          codesign --force --timestamp --sign "$CODESIGN_IDENTITY" dist/ClinCurate.dmg
+          xcrun notarytool submit dist/ClinCurate.dmg --apple-id "$APPLE_ID" \
+            --password "$APPLE_APP_PASSWORD" --team-id "$APPLE_TEAM_ID" --wait --timeout 30m
+          xcrun stapler staple dist/ClinCurate.dmg
+          spctl -a -t open --context context:primary-signature -vv dist/ClinCurate.dmg
       - uses: actions/upload-artifact@v4
         with:
           name: ClinCurate-${{ runner.os }}
