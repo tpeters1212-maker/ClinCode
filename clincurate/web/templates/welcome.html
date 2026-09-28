@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block title %}Welcome{% endblock %}
+{% block content %}
+<h1>Welcome to ClinCurate</h1>
+<p class="lede">Everything stays on this laptop. Nothing is sent over the internet.</p>
+<div class="cards two">
+  <section class="card">
+    <h2>I'm annotating</h2>
+    <p>Open the batch file your coordinator sent you.</p>
+    <form method="post" action="{{ url_for('import_package') }}" enctype="multipart/form-data" class="stack">
+      <input type="hidden" name="_token" value="{{ csrf_token }}">
+      <label>Batch file (.ccpkg)<input type="file" name="package" accept=".ccpkg" required></label>
+      <label>Project passphrase<input type="password" name="passphrase" required autocomplete="off"></label>
+      <button class="primary">Open batch</button>
+    </form>
+  </section>
+  <section class="card">
+    <h2>I'm the coordinator</h2>
+    <p>Set up a new project on this laptop. You will plan batches, send them out and collect results here.</p>
+    <form method="post" action="{{ url_for('setup_coordinator') }}" enctype="multipart/form-data" class="stack">
+      <input type="hidden" name="_token" value="{{ csrf_token }}">
+      <label>Project template
+        <select name="schema_choice">
+          {% for name in schemas %}<option value="{{ name }}">{{ name.replace('_', ' ') }}</option>{% endfor %}
+        </select>
+      </label>
+      <label>or upload a schema file (.yaml)<input type="file" name="schema_file" accept=".yaml,.yml"></label>
+      <label>Project passphrase <small>Protects batch files in transit. At least 10 characters. Share it with annotators in person or by phone.</small>
+        <input type="password" name="passphrase" minlength="10" required autocomplete="new-password"></label>
+      <label>Repeat passphrase<input type="password" name="passphrase2" minlength="10" required autocomplete="new-password"></label>
+      <button class="primary">Create project</button>
+    </form>
+  </section>
+</div>
+{% endblock %}

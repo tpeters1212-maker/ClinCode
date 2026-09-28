@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title %}Guide{% endblock %}
+{% block content %}
+<h1>{{ g.title }}: annotation guide</h1>
+<p><a href="{{ url_for('guide_md') }}">Download as a text file</a></p>
+<h2>How to work a note</h2>
+<ol>{% for s in g.steps %}<li>{{ s }}</li>{% endfor %}</ol>
+<ul>{% for r in g.rules %}<li>{{ r }}</li>{% endfor %}<li>{{ g.numeric_rule }}</li></ul>
+{% for d in g.domains %}
+<h2><span class="swatch" style="background:{{ d.color }}"></span>{{ d.label }}</h2>
+<dl>{% for f in d.fields %}<dt>{{ f.label }}</dt><dd>{{ f.help or '' }}</dd>{% endfor %}</dl>
+{% endfor %}
+{% endblock %}

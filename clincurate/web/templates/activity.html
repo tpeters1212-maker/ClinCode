@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% block title %}Activity{% endblock %}
+{% block content %}
+<h1>Activity</h1>
+<p class="muted">The last 300 actions on this laptop, newest first.</p>
+<table class="grid compact"><thead><tr><th>Time (UTC)</th><th>Who</th><th>Action</th><th>Detail</th></tr></thead>
+<tbody>{% for r in rows %}<tr><td>{{ r.ts }}</td><td>{{ r.actor }}</td><td>{{ r.action }}</td><td>{{ r.detail }}</td></tr>{% endfor %}</tbody></table>
+{% endblock %}

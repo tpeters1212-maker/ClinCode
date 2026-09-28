@@ -115,3 +115,29 @@ def render_focus_html(text: str, project: Project, highlighter: Highlighter) -> 
         parts.append("</section>")
     parts.append("</div>")
     return "".join(parts)
+
+
+@dataclass
+class MergedSnippet:
+    start: int
+    end: int
+    domains: list[str]
+
+
+def merged_snippets(text: str, project: Project, highlighter: Highlighter) -> list[MergedSnippet]:
+    """Focus windows from all domains merged and shown once, in note order.
+    Avoids repeating a sentence under every topic it touches."""
+    groups = build_snippets(text, project, highlighter)
+    spans = sorted((sn.start, sn.end, d) for d, sns in groups.items() for sn in sns)
+    out: list[MergedSnippet] = []
+    for s, e, d in spans:
+        if out and s <= out[-1].end + 1:
+            out[-1].end = max(out[-1].end, e)
+            if d not in out[-1].domains:
+                out[-1].domains.append(d)
+        else:
+            out.append(MergedSnippet(s, e, [d]))
+    order = {d.name: i for i, d in enumerate(project.domains)}
+    for m in out:
+        m.domains.sort(key=order.get)
+    return out

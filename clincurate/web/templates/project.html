@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+{% block title %}Project{% endblock %}
+{% block content %}
+<h1>Project</h1>
+<div class="cards two">
+  <section class="card">
+    <h2>Notes</h2>
+    <p>{{ note_count }} notes loaded.</p>
+    <form method="post" action="{{ url_for('import_notes') }}" enctype="multipart/form-data" class="stack">
+      <input type="hidden" name="_token" value="{{ csrf_token }}">
+      <label>Add notes from a CSV file
+        <small>Columns: note_id, text. Optional: patient_id, note_date, note_type. Notes already loaded are skipped.</small>
+        <input type="file" name="notes" accept=".csv" required></label>
+      <button class="primary">Import notes</button>
+    </form>
+    <table class="grid compact">
+      <thead><tr><th>Stratum</th><th class="num">Notes</th></tr></thead>
+      <tbody>{% for s in strata %}<tr><td>{{ s.label }}</td><td class="num">{{ s.total }}</td></tr>{% endfor %}</tbody>
+    </table>
+  </section>
+
+  <section class="card" id="annotators">
+    <h2>Annotators</h2>
+    <form method="post" action="{{ url_for('add_annotator') }}" class="row">
+      <input type="hidden" name="_token" value="{{ csrf_token }}">
+      <input name="name" placeholder="Name, e.g. Jordan Lee" required>
+      <button>Add</button>
+    </form>
+    <ul class="plain">
+      {% for a in annotators %}
+      <li class="{{ '' if a.active else 'muted' }}">{{ a.name }}
+        <form method="post" action="{{ url_for('toggle_annotator', name=a.name) }}" class="inline">
+          <input type="hidden" name="_token" value="{{ csrf_token }}">
+          <button class="linkish">{{ 'Deactivate' if a.active else 'Reactivate' }}</button>
+        </form></li>
+      {% else %}<li class="muted">No annotators yet.</li>{% endfor %}
+    </ul>
+  </section>
+
+  <section class="card">
+    <h2>Questions and highlighting</h2>
+    <p>The form, highlighted words and sampling strata come from the project schema.
+       <a href="{{ url_for('guide') }}" target="_blank">View the annotation guide</a>.</p>
+    <details>
+      <summary>Replace schema</summary>
+      <p class="muted">Allowed only while no batch has started.</p>
+      <form method="post" action="{{ url_for('replace_schema') }}" enctype="multipart/form-data" class="stack">
+        <input type="hidden" name="_token" value="{{ csrf_token }}">
+        <label>Template<select name="schema_choice">{% for name in schemas %}<option value="{{ name }}">{{ name.replace('_',' ') }}</option>{% endfor %}</select></label>
+        <label>or upload (.yaml)<input type="file" name="schema_file" accept=".yaml,.yml"></label>
+        <button>Replace schema</button>
+      </form>
+    </details>
+    <details><summary>Show current schema</summary><pre class="code">{{ schema_yaml }}</pre></details>
+  </section>
+
+  <section class="card">
+    <h2>Project passphrase</h2>
+    <p>Batch and results files are encrypted with this passphrase.</p>
+    <form method="post" action="{{ url_for('change_passphrase') }}" class="stack">
+      <input type="hidden" name="_token" value="{{ csrf_token }}">
+      <input type="password" name="passphrase" minlength="10" placeholder="New passphrase" autocomplete="new-password" required>
+      <input type="password" name="passphrase2" minlength="10" placeholder="Repeat" autocomplete="new-password" required>
+      <button>Change passphrase</button>
+    </form>
+  </section>
+</div>
+{% endblock %}

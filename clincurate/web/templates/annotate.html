@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %}{{ 'Preview' if data.readonly and not data.item else 'Annotate' }}{% endblock %}
+{% block bodyclass %}annotating{% endblock %}
+{% block mainclass %}workspace{% endblock %}
+{% block content %}
+<div class="statusbar" id="statusbar"></div>
+<div class="panes">
+  <section class="pane left">
+    <div class="tabs" role="tablist">
+      <button class="tab active" data-tab="focus">Focus</button>
+      <button class="tab" data-tab="full">Full note</button>
+      <span class="notemeta" id="notemeta"></span>
+    </div>
+    <div class="legend" id="legend"></div>
+    <div id="focus" class="tabpane"></div>
+    <div id="full" class="tabpane hidden"><div class="notetext" data-start="0" id="fulltext"></div></div>
+    <div class="evpop hidden" id="evpop"><span>Save selection as evidence for:</span><div id="evbuttons"></div></div>
+  </section>
+  <section class="pane right">
+    <form id="form" autocomplete="off"></form>
+  </section>
+</div>
+<script type="application/json" id="cc-data">{{ data|tojson }}</script>
+{% endblock %}
+{% block scripts %}<script src="{{ url_for('static', filename='annotate.js') }}"></script>{% endblock %}

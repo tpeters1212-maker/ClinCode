@@ -14,6 +14,25 @@ project:
     unclear: Unclear
     not_applicable: Not applicable
 
+# Sampling strata. Each note gets the first stratum whose pattern matches,
+# so list rare categories first. Unmatched notes fall into "Other".
+strata:
+  - name: explicit_nighttime
+    label: Explicit nighttime AFO or night splint
+    patterns:
+      - '(?i)\bnight\s*splints?\b'
+      - '(?i)\b(?:night|night-?time|nocturnal|overnight)\s+(?:AFOs?|braces?|bracing|orthos[ie]s)\b'
+      - '(?i)\b(?:AFOs?|braces?)\b[^.\n]{0,40}\b(?:at night|nightly|every night|each night|while sleeping|nights? per week)\b'
+  - name: serial_casting
+    label: Serial casting
+    patterns: ['(?i)\bserial\s+cast']
+  - name: smo
+    label: SMO
+    patterns: ['\bSMOs?\b', '(?i)supramalleolar']
+  - name: afo_unspecified
+    label: AFO, timing not stated
+    patterns: ['\bAFOs?\b', '(?i)ankle[- ]foot orthos']
+
 evidence:
   # One span question over the full note. Labels are domains, not variables,
   # so the student highlights a sentence once and it covers every field in it.

@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block title %}Annotate{% endblock %}
+{% block content %}
+<h1>Who is annotating?</h1>
+{% if names %}
+<div class="cards three">{% for n in names %}<a class="card link" href="{{ url_for('queue', who=n) }}"><h2>{{ n }}</h2></a>{% endfor %}</div>
+{% else %}<p class="muted">No notes are assigned on this laptop yet.</p>{% endif %}
+{% if role == 'annotator' %}
+<section class="card">
+  <h2>Open another batch file</h2>
+  <form method="post" action="{{ url_for('import_package') }}" enctype="multipart/form-data" class="row wrap">
+    <input type="hidden" name="_token" value="{{ csrf_token }}">
+    <input type="file" name="package" accept=".ccpkg" required>
+    <input type="password" name="passphrase" placeholder="Project passphrase" required autocomplete="off">
+    <button>Open batch</button>
+  </form>
+</section>
+{% endif %}
+{% endblock %}

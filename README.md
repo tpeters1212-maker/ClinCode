@@ -1,55 +1,49 @@
 # ClinCurate
 
-Schema-driven clinical abstraction and sequential validation, built on [Argilla](https://github.com/argilla-io/argilla) (Apache 2.0).
+ClinCurate is a local, offline chart abstraction app for clinical notes. It runs entirely on one laptop, opens in the browser, and never sends data over the network. Nobody needs a command line.
 
-A YAML schema defines the variables, allowed answers, cue terms and regex patterns. ClinCurate turns it into an Argilla annotation project with highlighted Focus Mode snippets, a structured form, evidence capture, and exports with per-field provenance. Agreement statistics use patient-clustered bootstrap intervals for precision-based stopping.
+- **Coordinators** import notes, add annotators, plan batches by sampling stratum with a double-annotated share, send out batches, collect results, and check agreement and exports.
+- **Annotators** work through their notes with highlighted evidence sentences (Focus), save evidence by selecting text, answer a form that shows only the relevant questions, and always see how many notes are left. Work autosaves.
 
-First use case: pediatric foot and ankle phenotypes (orthoses, dorsiflexion, gait, escalation) at UCSF.
+The first use case is pediatric foot and ankle phenotypes at UCSF (orthoses, dorsiflexion, gait, escalation).
 
-![Argilla annotation view](docs/img/argilla_annotation_view.png)
+![Batch planning](docs/img/coordinator_batch_plan.png)
+![Annotation workspace](docs/img/annotator_workspace.png)
 
-## Status
+## Running it
 
-Stage 0 prototype. See `docs/mvp-spec.md` for the design, verified constraints, and staged plan.
+Coordinators and annotators: open `ClinCurate.exe` (Windows) or `ClinCurate.app` (macOS). The app opens a browser tab. Use **Quit** in the top bar to close it. Data stays in a `ClinCurate` folder in your home directory.
 
-## Quick start
+The builds come from GitHub Actions (`test-and-build` workflow, artifacts `ClinCurate-Windows` and `ClinCurate-macOS`). They are unsigned; on managed laptops, IT needs to sign or allow-list them.
+
+## Moving work between laptops
+
+Batch files (`.ccpkg`) and results files (`.ccres`) are encrypted with the project passphrase. Results files contain answers only, no note text. Move them only through UCSF-approved storage, and share the passphrase separately.
+
+## Development
 
 ```
-pip install -e ".[dev,argilla]"
-clincurate validate templates/pediatric_foot_ankle.yaml
-clincurate preview templates/pediatric_foot_ankle.yaml examples/synthetic_notes/notes.csv --out preview.html
-clincurate guide templates/pediatric_foot_ankle.yaml --out guide.md
+pip install -e ".[dev]"
+python -m clincurate          # starts the app and opens a browser
 pytest
+pyinstaller packaging/clincurate.spec
 ```
 
-Local Argilla for development (synthetic data only):
+Demo data: `examples/synthetic_notes/demo_notes.csv` (240 fabricated notes). Never commit real clinical text.
 
-```
-docker run -d -p 6900:6900 -e USERNAME=owner -e PASSWORD=12345678 -e API_KEY=dev.apikey argilla/argilla-hf-spaces:v2.8.0
-```
+## Documents
 
-```python
-import argilla as rg
-from clincurate import load_schema
-from clincurate.argilla_backend import push_dataset
-from clincurate.cli import read_notes
-
-client = rg.Argilla(api_url="http://localhost:6900", api_key="dev.apikey")
-project = load_schema("templates/pediatric_foot_ankle.yaml")
-push_dataset(client, project, read_notes("examples/synthetic_notes/notes.csv"), "afo_batch01_demo", "clincurate")
-```
+- `docs/mvp-spec.md`: design, workflows, security model, next steps
+- `docs/annotation-guide.md`: annotator guide generated from the schema
+- `clincurate/schemas/pediatric_foot_ankle.yaml`: questions, highlight cues, sampling strata
 
 ## Layout
 
-- `clincurate/schema.py`: schema loading and validation
-- `clincurate/highlight.py`: neutral cue and regex highlighting
-- `clincurate/focus.py`: Focus Mode snippets
-- `clincurate/export.py`: response resolution, provenance, wide and long exports, disagreements
-- `clincurate/stats.py`: kappa, clustered bootstrap, stopping check
-- `clincurate/argilla_backend.py`: the only Argilla-dependent module
-- `templates/`: project schemas
-- `examples/synthetic_notes/`: fabricated notes for tests and demos
-
-## PHI
-
-Never commit real clinical text. Deploy only inside an approved institutional environment. Gold standard mode never shows model output to annotators.
+- `clincurate/schema.py`: project schema
+- `clincurate/highlight.py`, `focus.py`: highlighting and Focus snippets
+- `clincurate/store.py`: SQLite storage
+- `clincurate/sampling.py`: batch draws and assignment
+- `clincurate/packages.py`: encrypted batch and results files
+- `clincurate/export.py`, `reports.py`, `stats.py`: exports and agreement
+- `clincurate/app.py`, `clincurate/web/`: the interface
+- `clincurate/launcher.py`, `packaging/`: double-click app

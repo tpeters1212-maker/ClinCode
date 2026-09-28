@@ -1,0 +1,138 @@
+{% extends "base.html" %}
+{% block title %}{{ b.name }}{% endblock %}
+{% block content %}
+<div class="headrow">
+  <h1>{{ b.name }} <span class="pill {{ b.status }}">{{ b.status|capitalize }}</span></h1>
+  <a href="{{ url_for('dashboard') }}">All batches</a>
+</div>
+
+{% if b.status == 'planned' %}
+<form method="post" action="{{ url_for('save_plan', batch_id=b.id) }}" class="card stack" id="plan">
+  <input type="hidden" name="_token" value="{{ csrf_token }}">
+  <h2>1. Plan</h2>
+  <div class="row wrap">
+    <label>Batch name<input name="name" value="{{ b.name }}" required></label>
+    <label class="grow">Purpose <small>for your records</small><input name="purpose" value="{{ b.purpose }}" placeholder="e.g. Pilot, oversample nighttime AFO"></label>
+    <label>Double-annotated<span class="suffix"><input name="dual_percent" type="number" min="0" max="100" step="5" value="{{ (b.dual_fraction*100)|round(0)|int }}" class="short"> %</span></label>
+  </div>
+  <h3>Notes per stratum</h3>
+  <table class="grid compact">
+    <thead><tr><th>Stratum</th><th class="num">Available</th><th class="num">Take</th></tr></thead>
+    <tbody>
+      {% for s in strata %}
+      <tr><td>{{ s.label }}</td><td class="num">{{ s.unused }}</td>
+          <td class="num"><input type="number" class="short quota" min="0" max="{{ s.unused }}" name="quota_{{ s.stratum }}" value="{{ quotas.get(s.stratum, 0) }}"></td></tr>
+      {% endfor %}
+      <tr class="total"><td>Total</td><td></td><td class="num" id="quota-total"></td></tr>
+    </tbody>
+  </table>
+  <h3>Annotators</h3>
+  <div class="checks">
+    {% for a in annotators %}<label class="check"><input type="checkbox" name="annotators" value="{{ a.name }}" {% if a.name in chosen %}checked{% endif %}> {{ a.name }}</label>
+    {% else %}<span class="muted">Add annotators on the <a href="{{ url_for('project_page') }}#annotators">Project</a> page.</span>{% endfor %}
+  </div>
+  <div class="row">
+    <button name="action" value="save">Save plan</button>
+    <button name="action" value="draw" class="primary">{{ 'Redraw notes' if notes else 'Draw notes' }}</button>
+  </div>
+</form>
+
+{% if notes %}
+<section class="card">
+  <h2>2. Review</h2>
+  <p>{{ notes|length }} notes drawn, {{ notes|selectattr('dual')|list|length }} of them double-annotated.</p>
+  {% if plan and plan.error %}<div class="flash error">{{ plan.error }}</div>
+  {% elif plan %}
+  <table class="grid compact"><thead><tr><th>Annotator</th><th class="num">Notes</th></tr></thead>
+    <tbody>{% for who, ids in plan.items() %}<tr><td>{{ who }}</td><td class="num">{{ ids|length }}</td></tr>{% endfor %}</tbody></table>
+  {% endif %}
+  <details><summary>Show drawn notes</summary>
+    <table class="grid compact"><thead><tr><th>Note</th><th>Patient</th><th>Date</th><th>Stratum</th><th>Double</th></tr></thead>
+    <tbody>{% for n in notes %}<tr><td><a href="{{ url_for('preview_note', note_id=n.note_id) }}" target="_blank">{{ n.note_id }}</a></td><td>{{ n.patient_id }}</td><td>{{ n.note_date }}</td><td>{{ labels.get(n.stratum, n.stratum) }}</td><td>{{ 'Yes' if n.dual else '' }}</td></tr>{% endfor %}</tbody></table>
+  </details>
+</section>
+<section class="card">
+  <h2>3. Start</h2>
+  <p>Starting assigns the notes and locks the draw. Save any plan changes first.</p>
+  <form method="post" action="{{ url_for('batch_action', batch_id=b.id, action='start') }}" class="inline">
+    <input type="hidden" name="_token" value="{{ csrf_token }}">
+    <button class="primary" {% if not plan or plan.error %}disabled{% endif %} data-confirm="Start {{ b.name }}?">Start batch</button>
+  </form>
+</section>
+{% endif %}
+<form method="post" action="{{ url_for('batch_action', batch_id=b.id, action='delete') }}">
+  <input type="hidden" name="_token" value="{{ csrf_token }}">
+  <button class="danger linkish" data-confirm="Delete this planned batch? Its notes return to the pool.">Delete this planned batch</button>
+</form>
+
+{% else %}
+{% if b.purpose %}<p class="lede">{{ b.purpose }}</p>{% endif %}
+<section class="card">
+  <h2>Progress</h2>
+  <table class="grid">
+    <thead><tr><th>Annotator</th><th>Progress</th><th class="num">Left</th><th class="num">Drafts</th><th class="num">Flagged</th><th class="num">Avg min/note</th><th>Batch file</th></tr></thead>
+    <tbody>
+    {% for p in progress %}
+    <tr><td>{{ p.annotator }}</td>
+      <td><div class="bar"><span style="width:{{ (100*(p.submitted or 0)/p.total)|round(0) }}%"></span></div><small>{{ p.submitted or 0 }} of {{ p.total }}</small></td>
+      <td class="num">{{ p.total - (p.submitted or 0) }}</td><td class="num">{{ p.drafts or 0 }}</td><td class="num">{{ p.flagged or 0 }}</td>
+      <td class="num">{{ ((p.avg_seconds or 0)/60)|round(1) if p.avg_seconds else '' }}</td>
+      <td>{% if b.status == 'active' %}<a class="button" href="{{ url_for('download_package', batch_id=b.id, annotator=p.annotator) }}">Download for {{ p.annotator.split()[0] }}</a>{% endif %}</td></tr>
+    {% endfor %}
+    </tbody>
+  </table>
+  <p class="muted">Annotators on their own laptops: send them their batch file through UCSF-approved storage, and give them the passphrase separately. Annotators on this laptop: use <a href="{{ url_for('annotate_home') }}">Annotate here</a>.</p>
+  <form method="post" action="{{ url_for('upload_results') }}" enctype="multipart/form-data" class="row">
+    <input type="hidden" name="_token" value="{{ csrf_token }}">
+    <input type="file" name="results" accept=".ccres" multiple required>
+    <button>Import results</button>
+  </form>
+</section>
+
+<section class="card">
+  <h2>Agreement on double-annotated notes</h2>
+  {% if agreement and agreement[0].n %}
+  <p class="muted">{{ agreement[0].n }} notes submitted by both annotators. Intervals are 95%, resampling patients. They appear from 5 notes.</p>
+  <table class="grid compact">
+    <thead><tr><th>Question</th><th>Measure</th><th class="num">Value</th><th class="num">95% interval</th></tr></thead>
+    <tbody>{% for a in agreement %}<tr><td>{{ a.label }}</td><td>{{ a.metric }}</td>
+      <td class="num">{{ '%.2f'|format(a.value) if a.value is not none else '' }}</td>
+      <td class="num">{% if a.lo is not none %}{{ '%.2f'|format(a.lo) }} to {{ '%.2f'|format(a.hi) }}{% endif %}</td></tr>{% endfor %}</tbody>
+  </table>
+  {% else %}<p class="muted">No double-annotated note has been submitted by both annotators yet.</p>{% endif %}
+</section>
+
+{% if disagreements %}
+<section class="card">
+  <h2>Needs review: {{ disagreements|length }} notes where annotators differ</h2>
+  {% for d in disagreements %}
+  <details><summary><a href="{{ url_for('preview_note', note_id=d.note_id) }}" target="_blank">{{ d.note_id }}</a>: {{ d.fields|map(attribute='label')|join(', ') }}</summary>
+    <table class="grid compact"><thead><tr><th>Question</th><th>{{ d.annotators[0] }}</th><th>{{ d.annotators[1] }}</th></tr></thead>
+    <tbody>{% for f in d.fields %}<tr><td>{{ f.label }}</td><td>{{ f.a|answer }}</td><td>{{ f.b|answer }}</td></tr>{% endfor %}</tbody></table>
+  </details>
+  {% endfor %}
+</section>
+{% endif %}
+
+{% if problems %}
+<section class="card">
+  <h2>Incomplete answers: {{ problems|length }}</h2>
+  <p class="muted">Submitted notes with a question left blank in a ticked topic, or a number that could not be read.</p>
+  <ul class="plain">{% for p in problems %}<li>{{ p.annotator }}, {{ p.note_id }}: {{ p.fields|join(', ') }}</li>{% endfor %}</ul>
+</section>
+{% endif %}
+
+<section class="card">
+  <h2>Export this batch</h2>
+  <p><a class="button" href="{{ url_for('export', shape='wide', batch=b.id) }}">One row per note</a>
+     <a class="button" href="{{ url_for('export', shape='long', batch=b.id) }}">One row per answer</a>
+     <a class="button" href="{{ url_for('export', shape='evidence', batch=b.id) }}">Evidence</a></p>
+  {% if b.status == 'active' %}
+  <form method="post" action="{{ url_for('batch_action', batch_id=b.id, action='close') }}"><input type="hidden" name="_token" value="{{ csrf_token }}"><button data-confirm="Close {{ b.name }}? Annotators can no longer change answers.">Close batch</button></form>
+  {% else %}
+  <form method="post" action="{{ url_for('batch_action', batch_id=b.id, action='reopen') }}"><input type="hidden" name="_token" value="{{ csrf_token }}"><button>Reopen batch</button></form>
+  {% endif %}
+</section>
+{% endif %}
+{% endblock %}
+{% block scripts %}<script src="{{ url_for('static', filename='batch.js') }}"></script>{% endblock %}

@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}{{ who }}{% endblock %}
+{% block content %}
+<div class="headrow">
+  <h1>{{ who }}</h1>
+  <a class="button primary big" href="{{ url_for('next_item', who=who) }}">Continue annotating</a>
+</div>
+{% for bid, bs in batches.items() %}
+<section class="card">
+  <div class="headrow">
+    <h2>{{ bs.name }} {% if bs.status == 'closed' %}<span class="pill closed">Closed</span>{% endif %}</h2>
+    {% if role == 'annotator' %}<a class="button" href="{{ url_for('download_results', who=who, batch_id=bid) }}">Save results file for coordinator</a>{% endif %}
+  </div>
+  <div class="bar big"><span style="width:{{ (100*bs.done/bs.rows|length)|round(0) }}%"></span></div>
+  <p><strong>{{ bs.rows|length - bs.done }} notes left</strong> of {{ bs.rows|length }}.{% if bs.drafts %} {{ bs.drafts }} started but not submitted.{% endif %}</p>
+  <details {% if bs.rows|length <= 30 %}open{% endif %}><summary>All notes in this batch</summary>
+  <ol class="queue">{% for it in bs.rows %}
+    <li class="{{ it.status }}"><a href="{{ url_for('annotate_item', who=who, item_id=it.id) }}">Note {{ loop.index }}</a>
+      <span class="pill {{ it.status }}">{{ {'pending': 'To do', 'draft': 'Started', 'submitted': 'Done'}[it.status] }}</span></li>
+  {% endfor %}</ol></details>
+</section>
+{% endfor %}
+{% endblock %}

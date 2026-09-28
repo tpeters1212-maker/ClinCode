@@ -2,8 +2,9 @@ from pathlib import Path
 
 import pytest
 
-from clincurate.argilla_backend import record_payload, render_guidelines
-from clincurate.cli import main, read_notes
+import csv
+
+from clincurate.guide import render_markdown
 from clincurate.export import disagreements, long_rows, resolve, wide_row
 from clincurate.focus import build_snippets, split_sentences
 from clincurate.highlight import Highlighter
@@ -11,8 +12,13 @@ from clincurate.schema import SchemaError, load_schema
 from clincurate.stats import bootstrap, cohen_kappa, precision_reached
 
 ROOT = Path(__file__).resolve().parents[1]
-SCHEMA = ROOT / "templates" / "pediatric_foot_ankle.yaml"
+SCHEMA = ROOT / "clincurate" / "schemas" / "pediatric_foot_ankle.yaml"
 NOTES = ROOT / "examples" / "synthetic_notes" / "notes.csv"
+
+
+def read_notes(path):
+    with open(path, newline="", encoding="utf-8") as fh:
+        return list(csv.DictReader(fh))
 
 
 @pytest.fixture(scope="module")
@@ -86,17 +92,6 @@ def test_telephone_note_has_no_snippets(project, hl):
     assert build_snippets(note["text"], project, hl) == {}
 
 
-def test_record_payload(project):
-    note = read_notes(NOTES)[0]
-    rec = record_payload(project, note)
-    assert rec["fields"]["note"] == note["text"]
-    assert "<mark" in rec["fields"]["focus"]["html"]
-    assert rec["metadata"]["patient_id"] == "P01"
-    assert len(rec["metadata"]["note_sha256"]) == 64
-    # Gold standard mode: records never carry model output.
-    assert "suggestions" not in rec and "responses" not in rec
-
-
 def test_resolve_screening_and_numeric(project):
     r = resolve(project, "SYN-003", "A", {
         "documented_domains": ["rom", "gait"],
@@ -140,12 +135,25 @@ def test_kappa_and_bootstrap():
     assert precision_reached(est, 1.0) and not precision_reached(est, 0.0)
 
 
-def test_guidelines_generated(project):
-    g = render_guidelines(project)
+def test_guide_generated(project):
+    g = render_markdown(project)
     assert "Lacks 10 to neutral" in g and "## Gait" in g
 
 
-def test_cli_preview(tmp_path):
-    out = tmp_path / "p.html"
-    assert main(["preview", str(SCHEMA), str(NOTES), "--out", str(out)]) == 0
-    assert "SYN-010" in out.read_text()
+def test_strata(project):
+    notes = {n["note_id"]: n["text"] for n in read_notes(NOTES)}
+    assert project.stratum_of(notes["SYN-001"]) == "explicit_nighttime"
+    assert project.stratum_of(notes["SYN-007"]) == "explicit_nighttime"
+    assert project.stratum_of(notes["SYN-003"]) == "serial_casting"
+    assert project.stratum_of(notes["SYN-005"]) == "smo"
+    assert project.stratum_of(notes["SYN-008"]) == "other"
+    assert project.stratum_of("Has bilateral AFOs.") == "afo_unspecified"
+
+
+
+def test_merged_snippets_no_repeats(project, hl):
+    from clincurate.focus import merged_snippets
+    note = read_notes(NOTES)[0]["text"]
+    ms = merged_snippets(note, project, hl)
+    assert all(a.end < b.start for a, b in zip(ms, ms[1:]))
+    assert {"orthosis", "rom", "gait"} <= {d for m in ms for d in m.domains}

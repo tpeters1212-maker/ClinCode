@@ -1,0 +1,1192 @@
+note_id,patient_id,note_date,note_type,text
+DEMO-0001,DP088,2024-12-26,Clinic note,"HISTORY: 14 yo male with cerebral palsy, spastic diplegia, and equinus.
+Wearing AFOs, schedule not specified.
+EXAM: Dorsiflexion to neutral with knee straight, 10 degrees with knee bent. 
+Heel-toe gait today. Improved compared with last visit.
+Plan: follow up as needed."
+DEMO-0002,DP089,2025-11-19,Clinic note,"HISTORY: Follow up for 12 yo male with Achilles contracture.
+Home stretching program only.
+EXAM: DF knee extended 0° right, -5° left. Knee flexed 10 degrees. Standing radiographs reviewed: calcaneal pitch within normal limits.
+Gait: intermittent toe walking, able to heel strike when prompted.
+Plan: continue stretching. Consider serial casting if no improvement."
+DEMO-0003,DP029,2022-04-06,Clinic note,"HISTORY: Follow up for 14 yo female with Achilles contracture.
+Completed serial casting x4 with improvement in dorsiflexion.
+EXAM: DF knee extended -10° right, -5° left. Knee flexed 15 degrees. Standing radiographs reviewed: calcaneal pitch within normal limits.
+Gait: intermittent toe walking, able to heel strike when prompted.
+Plan: continue current bracing, return in 3 months."
+DEMO-0004,DP078,2025-12-23,Clinic note,"HISTORY: 13 year old female seen for bilateral heel cord tightness.
+Completed serial casting x1 with improvement in dorsiflexion.
+EXAM: Ankle dorsiflexion with knee extended is 15 degrees bilaterally; with knee flexed 15 degrees. Standing radiographs reviewed: calcaneal pitch within normal limits.
+Walks with heel strike, rare toe walking.
+Plan: discussed Achilles lengthening versus gastrocnemius recession; family will consider."
+DEMO-0005,DP048,2022-02-17,Clinic note,"HISTORY: Follow up for 10 yo male with Achilles contracture.
+No bracing at this time.
+EXAM: Ankle ROM full. 
+Heel-toe gait today. Improved compared with last visit.
+Plan: surgery scheduled for gastrocnemius recession."
+DEMO-0006,DP013,2023-09-19,Clinic note,"HISTORY: 3 yo male with cerebral palsy, spastic diplegia, and equinus.
+Has bilateral AFOs from outside provider.
+EXAM: DF knee extended -10° right, 0° left. Knee flexed 15 degrees. 
+Gait: intermittent toe walking, able to heel strike when prompted.
+Plan: surgery scheduled for gastrocnemius recession."
+DEMO-0007,DP056,2024-01-13,Clinic note,"HISTORY: 2 yo male with cerebral palsy, spastic diplegia, and equinus.
+Using night splints most nights; family reports good tolerance.
+EXAM: Right ankle lacks 10 degrees to neutral with the knee extended. Standing radiographs reviewed: calcaneal pitch within normal limits.
+Gait: constant toe walking, no heel strike.
+Plan: continue stretching. Consider serial casting if no improvement."
+DEMO-0008,DP062,2025-10-23,Clinic note,"HISTORY: 12 year old female seen for bilateral heel cord tightness.
+Wearing AFOs, schedule not specified.
+EXAM: Right ankle lacks 10 degrees to neutral with the knee extended. Pes planus, corrects on toe rise.
+Walks with heel strike, rare toe walking.
+Plan: follow up as needed."
+DEMO-0009,DP039,2023-01-04,Clinic note,"HISTORY: 10 y.o. female referred for toe walking since starting to walk.
+Serial casting #3 applied today in maximal dorsiflexion.
+EXAM: Right ankle lacks 5 degrees to neutral with the knee extended. 
+Gait: intermittent toe walking, able to heel strike when prompted.
+Plan: follow up as needed."
+DEMO-0010,DP033,2022-09-16,Clinic note,"HISTORY: Follow up for 10 yo male with Achilles contracture.
+AFOs fit well. Parent reports he wears them most of the time.
+EXAM: Ankle dorsiflexion with knee extended is 15 degrees bilaterally; with knee flexed 20 degrees. Pes planus, corrects on toe rise.
+Gait: intermittent toe walking, able to heel strike when prompted.
+Plan: follow up as needed."
+DEMO-0011,DP066,2022-10-05,Clinic note,"HISTORY: 8 yo male with idiopathic toe walking.
+Outgrowing AFOs; new pair ordered.
+EXAM: Dorsiflexion to neutral with knee straight, 10 degrees with knee bent. Mild hindfoot valgus, flexible.
+Gait: intermittent toe walking, able to heel strike when prompted.
+Plan: continue stretching. Consider serial casting if no improvement."
+DEMO-0012,DP086,2025-11-23,Clinic note,"HISTORY: Follow up for 9 yo male with Achilles contracture.
+Serial casting #4 applied today in maximal dorsiflexion.
+EXAM: DF knee extended 5° right, 5° left. Knee flexed 10 degrees. Mild hindfoot valgus, flexible.
+Gait: intermittent toe walking, able to heel strike when prompted.
+Plan: continue current bracing, return in 3 months."
+DEMO-0013,DP052,2022-09-05,Clinic note,"HISTORY: 14 yo male with idiopathic toe walking.
+Home stretching program only.
+EXAM: Right ankle lacks 5 degrees to neutral with the knee extended. 
+Gait: constant toe walking, no heel strike.
+Plan: continue current bracing, return in 3 months."
+DEMO-0014,DP062,2025-02-17,Clinic note,"HISTORY: 6 y.o. female referred for toe walking since starting to walk.
+EXAM: Ankle ROM full. Mild hindfoot valgus, flexible.
+Toe walks most of the time. Stable from prior.
+Plan: new AFOs ordered. Follow up in 4 months."
+DEMO-0015,DP066,2022-07-10,Clinic note,"HISTORY: 11 yo male with cerebral palsy, spastic diplegia, and equinus.
+Not wearing the AFOs much due to discomfort.
+EXAM: Right ankle lacks 5 degrees to neutral with the knee extended. Standing radiographs reviewed: calcaneal pitch within normal limits.
+Heel-toe gait today. Improved compared with last visit.
+Plan: surgery scheduled for gastrocnemius recession."
+DEMO-0016,DP003,2022-09-19,Clinic note,"HISTORY: Follow up for 14 yo male with Achilles contracture.
+Outgrowing AFOs; new pair ordered.
+EXAM: Ankle dorsiflexion with knee extended is 0 degrees bilaterally; with knee flexed 10 degrees. 
+Heel-toe gait today. Improved compared with last visit.
+Plan: follow up as needed."
+DEMO-0017,DP034,2025-09-10,Clinic note,"HISTORY: 7 year old female seen for bilateral heel cord tightness.
+Outgrowing AFOs; new pair ordered.
+EXAM: Right ankle lacks 15 degrees to neutral with the knee extended. Pes planus, corrects on toe rise.
+Toe walks most of the time. Stable from prior.
+Plan: new AFOs ordered. Follow up in 4 months."
+DEMO-0018,DP071,2022-08-23,Clinic note,"HISTORY: Follow up for 9 yo female with Achilles contracture.
+Not wearing the AFOs much due to discomfort.
+EXAM: Ankle dorsiflexion with knee extended is 10 degrees bilaterally; with knee flexed 20 degrees. Standing radiographs reviewed: calcaneal pitch within normal limits.
+Walks with heel strike, rare toe walking.
+Plan: new AFOs ordered. Follow up in 4 months."
+DEMO-0019,DP009,2025-05-25,Clinic note,"HISTORY: 13 yo female with cerebral palsy, spastic diplegia, and equinus.
+Not wearing the AFOs much due to discomfort.
+EXAM: Dorsiflexion to neutral with knee straight, 20 degrees with knee bent. Mild hindfoot valgus, flexible.
+Toe walks most of the time. Stable from prior.
+Plan: discussed Achilles lengthening versus gastrocnemius recession; family will consider."
+DEMO-0020,DP069,2024-04-11,Clinic note,"HISTORY: 11 yo female with cerebral palsy, spastic diplegia, and equinus.
+Wearing AFOs, schedule not specified.
+EXAM: Right ankle lacks 15 degrees to neutral with the knee extended. Standing radiographs reviewed: calcaneal pitch within normal limits.
+Walks with heel strike, rare toe walking.
+Plan: continue current bracing, return in 3 months."
+DEMO-0021,DP016,2023-11-18,Clinic note,"HISTORY: 9 yo male with idiopathic toe walking.
+Not wearing the AFOs much due to discomfort.
+EXAM: DF knee extended 10° right, 5° left. Knee flexed 15 degrees. Pes planus, corrects on toe rise.
+Heel-toe gait today. Improved compared with last visit.
+Plan: surgery scheduled for gastrocnemius recession."
+DEMO-0022,DP076,2025-08-02,Clinic note,"HISTORY: 14 year old male seen for bilateral heel cord tightness.
+Has bilateral AFOs from outside provider.
+EXAM: Ankle ROM full. Mild hindfoot valgus, flexible.
+Walks with heel strike, rare toe walking.
+Plan: continue stretching. Consider serial casting if no improvement."
+DEMO-0023,DP071,2022-10-12,Clinic note,"HISTORY: 13 year old female seen for bilateral heel cord tightness.
+Wearing AFOs, schedule not specified.
+EXAM: Ankle dorsiflexion with knee extended is 15 degrees bilaterally; with knee flexed 5 degrees. Mild hindfoot valgus, flexible.
+Gait: constant toe walking, no heel strike.
+Plan: surgery scheduled for gastrocnemius recession."
+DEMO-0024,DP081,2025-11-20,Clinic note,"HISTORY: 12 yo female with idiopathic toe walking.
+Has bilateral AFOs from outside provider.
+EXAM: DF knee extended 0° right, -5° left. Knee flexed 20 degrees. 
+Toe walks most of the time. Stable from prior.
+Plan: follow up as needed."
+DEMO-0025,DP031,2025-11-22,Clinic note,"HISTORY: 10 yo male with idiopathic toe walking.
+Outgrowing AFOs; new pair ordered.
+EXAM: Ankle dorsiflexion with knee extended is 0 degrees bilaterally; with knee flexed 15 degrees. 
+Toe walks most of the time. Stable from prior.
+Plan: follow up as needed."
+DEMO-0026,DP070,2025-06-26,Clinic note,"HISTORY: 10 yo male with idiopathic toe walking.
+Outgrowing AFOs; new pair ordered.
+EXAM: DF knee extended -10° right, 5° left. Knee flexed 15 degrees. Pes planus, corrects on toe rise.
+Walks with heel strike, rare toe walking.
+Plan: discussed Achilles lengthening versus gastrocnemius recession; family will consider."
+DEMO-0027,DP028,2022-09-19,Clinic note,"HISTORY: Follow up for 11 yo male with Achilles contracture.
+Has bilateral AFOs from outside provider.
+EXAM: Dorsiflexion to neutral with knee straight, 10 degrees with knee bent. 
+Gait: constant toe walking, no heel strike.
+Plan: continue current bracing, return in 3 months."
+DEMO-0028,DP068,2023-01-03,Clinic note,"HISTORY: 10 y.o. female referred for toe walking since starting to walk.
+Wearing AFOs, schedule not specified.
+EXAM: Right ankle lacks 15 degrees to neutral with the knee extended. 
+Heel-toe gait today. Improved compared with last visit.
+Plan: surgery scheduled for gastrocnemius recession."
+DEMO-0029,DP006,2024-10-08,Clinic note,"HISTORY: 7 yo female with idiopathic toe walking.
+Not wearing the AFOs much due to discomfort.
+EXAM: DF knee extended 5° right, 0° left. Knee flexed 10 degrees. 
+Heel-toe gait today. Improved compared with last visit.
+Plan: continue stretching. Consider serial casting if no improvement."
+DEMO-0030,DP028,2022-12-04,Clinic note,"HISTORY: 7 y.o. female referred for toe walking since starting to walk.
+Outgrowing AFOs; new pair ordered.
+EXAM: Ankle ROM full. Mild hindfoot valgus, flexible.
+Toe walks most of the time. Stable from prior.
+Plan: discussed Achilles lengthening versus gastrocnemius recession; family will consider."
+DEMO-0031,DP023,2022-03-25,Clinic note,"HISTORY: 12 y.o. female referred for toe walking since starting to walk.
+EXAM: Dorsiflexion to neutral with knee straight, 20 degrees with knee bent. Standing radiographs reviewed: calcaneal pitch within normal limits.
+Gait: constant toe walking, no heel strike.
+Plan: surgery scheduled for gastrocnemius recession."
+DEMO-0032,DP048,2025-03-17,Clinic note,"HISTORY: 6 y.o. female referred for toe walking since starting to walk.
+Not wearing the AFOs much due to discomfort.
+EXAM: Ankle ROM full. Pes planus, corrects on toe rise.
+Walks with heel strike, rare toe walking.
+Plan: follow up as needed."
+DEMO-0033,DP059,2024-03-01,Clinic note,"HISTORY: 11 year old female seen for bilateral heel cord tightness.
+EXAM: DF knee extended 0° right, 5° left. Knee flexed 10 degrees. Mild hindfoot valgus, flexible.
+Gait: constant toe walking, no heel strike.
+Plan: follow up as needed."
+DEMO-0034,DP077,2023-07-07,Clinic note,"HISTORY: Follow up for 8 yo male with Achilles contracture.
+Outgrowing AFOs; new pair ordered.
+EXAM: Ankle dorsiflexion with knee extended is 15 degrees bilaterally; with knee flexed 20 degrees. Pes planus, corrects on toe rise.
+Gait: intermittent toe walking, able to heel strike when prompted.
+Plan: follow up as needed."
+DEMO-0035,DP090,2022-03-21,Clinic note,"HISTORY: 5 y.o. male referred for toe walking since starting to walk.
+Wearing AFOs, schedule not specified.
+EXAM: Right ankle lacks 10 degrees to neutral with the knee extended. Mild hindfoot valgus, flexible.
+Gait: intermittent toe walking, able to heel strike when prompted.
+Plan: follow up as needed."
+DEMO-0036,DP018,2023-05-23,Clinic note,"HISTORY: 4 y.o. female referred for toe walking since starting to walk.
+No bracing at this time.
+EXAM: Ankle ROM full. 
+Gait: intermittent toe walking, able to heel strike when prompted.
+Plan: continue current bracing, return in 3 months."
+DEMO-0037,DP078,2024-03-05,Clinic note,"HISTORY: Follow up for 9 yo female with Achilles contracture.
+AFOs fit well. Parent reports he wears them most of the time.
+EXAM: Right ankle lacks 10 degrees to neutral with the knee extended. 
+Heel-toe gait today. Improved compared with last visit.
+Plan: continue current bracing, return in 3 months."
+DEMO-0038,DP061,2024-08-08,Clinic note,"HISTORY: Follow up for 3 yo female with Achilles contracture.
+Not wearing the AFOs much due to discomfort.
+EXAM: Ankle ROM full. Standing radiographs reviewed: calcaneal pitch within normal limits.
+Heel-toe gait today. Improved compared with last visit.
+Plan: surgery scheduled for gastrocnemius recession."
+DEMO-0039,DP084,2022-03-26,Clinic note,"HISTORY: 12 year old male seen for bilateral heel cord tightness.
+AFOs fit well. Parent reports he wears them most of the time.
+EXAM: Ankle dorsiflexion with knee extended is 5 degrees bilaterally; with knee flexed 15 degrees. Mild hindfoot valgus, flexible.
+Heel-toe gait today. Improved compared with last visit.
+Plan: discussed Achilles lengthening versus gastrocnemius recession; family will consider."
+DEMO-0040,DP067,2025-07-15,Clinic note,"HISTORY: Follow up for 6 yo male with Achilles contracture.
+Wearing AFOs, schedule not specified.
+EXAM: Ankle dorsiflexion with knee extended is 15 degrees bilaterally; with knee flexed 10 degrees. 
+Toe walks most of the time. Stable from prior.
+Plan: discussed Achilles lengthening versus gastrocnemius recession; family will consider."
+DEMO-0041,DP017,2025-11-11,Clinic note,"HISTORY: 12 yo female with cerebral palsy, spastic diplegia, and equinus.
+Not wearing the AFOs much due to discomfort.
+EXAM: DF knee extended -5° right, -5° left. Knee flexed 20 degrees. 
+Walks with heel strike, rare toe walking.
+Plan: surgery scheduled for gastrocnemius recession."
+DEMO-0042,DP066,2025-10-11,Clinic note,"HISTORY: Follow up for 10 yo male with Achilles contracture.
+Outgrowing AFOs; new pair ordered.
+EXAM: Right ankle lacks 15 degrees to neutral with the knee extended. 
+Toe walks most of the time. Stable from prior.
+Plan: follow up as needed."
+DEMO-0043,DP006,2022-02-22,Clinic note,"HISTORY: Follow up for 8 yo female with Achilles contracture.
+No bracing at this time.
+EXAM: Right ankle lacks 5 degrees to neutral with the knee extended. Mild hindfoot valgus, flexible.
+Walks with heel strike, rare toe walking.
+Plan: follow up as needed."
+DEMO-0044,DP046,2024-06-25,Clinic note,"HISTORY: 5 yo female with idiopathic toe walking.
+Discussed serial casting; family agrees to start next week.
+EXAM: DF knee extended 10° right, 5° left. Knee flexed 20 degrees. Standing radiographs reviewed: calcaneal pitch within normal limits.
+Heel-toe gait today. Improved compared with last visit.
+Plan: new AFOs ordered. Follow up in 4 months."
+DEMO-0045,DP072,2023-04-07,Clinic note,"HISTORY: 10 y.o. male referred for toe walking since starting to walk.
+Wears bilateral SMOs; no skin issues.
+EXAM: Ankle ROM full. Standing radiographs reviewed: calcaneal pitch within normal limits.
+Heel-toe gait today. Improved compared with last visit.
+Plan: continue current bracing, return in 3 months."
+DEMO-0046,DP081,2023-08-05,Clinic note,"HISTORY: 2 y.o. female referred for toe walking since starting to walk.
+No bracing at this time.
+EXAM: Ankle dorsiflexion with knee extended is -10 degrees bilaterally; with knee flexed 15 degrees. Mild hindfoot valgus, flexible.
+Heel-toe gait today. Improved compared with last visit.
+Plan: follow up as needed."
+DEMO-0047,DP064,2022-09-18,Clinic note,"HISTORY: 14 yo male with cerebral palsy, spastic diplegia, and equinus.
+Serial casting #1 applied today in maximal dorsiflexion.
+EXAM: DF knee extended -10° right, -5° left. Knee flexed 5 degrees. 
+Gait: constant toe walking, no heel strike.
+Plan: continue stretching. Consider serial casting if no improvement."
+DEMO-0048,DP042,2023-06-24,Clinic note,"HISTORY: Follow up for 14 yo male with Achilles contracture.
+Wearing AFOs, schedule not specified.
+EXAM: DF knee extended 15° right, 10° left. Knee flexed 15 degrees. 
+Heel-toe gait today. Improved compared with last visit.
+Plan: continue stretching. Consider serial casting if no improvement."
+DEMO-0049,DP001,2023-02-05,Clinic note,"HISTORY: 4 y.o. male referred for toe walking since starting to walk.
+Currently wearing SMOs daily for school.
+EXAM: Ankle ROM full. 
+Gait: constant toe walking, no heel strike.
+Plan: new AFOs ordered. Follow up in 4 months."
+DEMO-0050,DP048,2022-02-26,Clinic note,"HISTORY: 10 yo female with cerebral palsy, spastic diplegia, and equinus.
+Outgrowing AFOs; new pair ordered.
+EXAM: Ankle ROM full. 
+Walks with heel strike, rare toe walking.
+Plan: new AFOs ordered. Follow up in 4 months."
+DEMO-0051,DP012,2024-07-16,Clinic note,"HISTORY: 13 y.o. female referred for toe walking since starting to walk.
+Wears bilateral SMOs; no skin issues.
+EXAM: Ankle dorsiflexion with knee extended is 15 degrees bilaterally; with knee flexed 20 degrees. 
+Heel-toe gait today. Improved compared with last visit.
+Plan: discussed Achilles lengthening versus gastrocnemius recession; family will consider."
+DEMO-0052,DP056,2022-04-10,Clinic note,"HISTORY: Follow up for 8 yo male with Achilles contracture.
+Not wearing the AFOs much due to discomfort.
+EXAM: DF knee extended 10° right, 5° left. Knee flexed 10 degrees. Mild hindfoot valgus, flexible.
+Heel-toe gait today. Improved compared with last visit.
+Plan: surgery scheduled for gastrocnemius recession."
+DEMO-0053,DP024,2022-12-23,Clinic note,"HISTORY: 9 yo male with idiopathic toe walking.
+Home stretching program only.
+EXAM: Ankle dorsiflexion with knee extended is 0 degrees bilaterally; with knee flexed 5 degrees. Pes planus, corrects on toe rise.
+Toe walks most of the time. Stable from prior.
+Plan: discussed Achilles lengthening versus gastrocnemius recession; family will consider."
+DEMO-0054,DP090,2025-10-19,Clinic note,"HISTORY: 11 yo female with idiopathic toe walking.
+Wearing AFOs, schedule not specified.
+EXAM: DF knee extended 10° right, 5° left. Knee flexed 20 degrees. 
+Gait: constant toe walking, no heel strike.
+Plan: surgery scheduled for gastrocnemius recession."
+DEMO-0055,DP032,2022-03-20,Clinic note,"HISTORY: 10 yo female with cerebral palsy, spastic diplegia, and equinus.
+Wears bilateral SMOs; no skin issues.
+EXAM: Ankle ROM full. Standing radiographs reviewed: calcaneal pitch within normal limits.
+Gait: intermittent toe walking, able to heel strike when prompted.
+Plan: discussed Achilles lengthening versus gastrocnemius recession; family will consider."
+DEMO-0056,DP026,2023-06-02,Clinic note,"HISTORY: 12 yo female with idiopathic toe walking.
+Completed serial casting x3 with improvement in dorsiflexion.
+EXAM: Right ankle lacks 10 degrees to neutral with the knee extended. Standing radiographs reviewed: calcaneal pitch within normal limits.
+Heel-toe gait today. Improved compared with last visit.
+Plan: continue stretching. Consider serial casting if no improvement."
+DEMO-0057,DP050,2025-05-05,Clinic note,"HISTORY: 13 yo male with cerebral palsy, spastic diplegia, and equinus.
+Outgrowing AFOs; new pair ordered.
+EXAM: Right ankle lacks 5 degrees to neutral with the knee extended. Standing radiographs reviewed: calcaneal pitch within normal limits.
+Gait: constant toe walking, no heel strike.
+Plan: continue stretching. Consider serial casting if no improvement."
+DEMO-0058,DP067,2022-09-06,Clinic note,"HISTORY: 5 yo female with cerebral palsy, spastic diplegia, and equinus.
+Wearing AFOs, schedule not specified.
+EXAM: DF knee extended 10° right, -5° left. Knee flexed 15 degrees. 
+Heel-toe gait today. Improved compared with last visit.
+Plan: discussed Achilles lengthening versus gastrocnemius recession; family will consider."
+DEMO-0059,DP060,2023-11-06,Clinic note,"HISTORY: 7 y.o. male referred for toe walking since starting to walk.
+Home stretching program only.
+EXAM: Ankle dorsiflexion with knee extended is 10 degrees bilaterally; with knee flexed 20 degrees. Mild hindfoot valgus, flexible.
+Walks with heel strike, rare toe walking.
+Plan: follow up as needed."
+DEMO-0060,DP069,2024-01-27,Clinic note,"HISTORY: 9 yo female with cerebral palsy, spastic diplegia, and equinus.
+Wearing AFOs, schedule not specified.
+EXAM: Ankle dorsiflexion with knee extended is 0 degrees bilaterally; with knee flexed 10 degrees. Standing radiographs reviewed: calcaneal pitch within normal limits.
+Walks with heel strike, rare toe walking.
+Plan: surgery scheduled for gastrocnemius recession."
+DEMO-0061,DP086,2022-02-23,Clinic note,"HISTORY: 8 y.o. male referred for toe walking since starting to walk.
+AFOs fit well. Parent reports he wears them most of the time.
+EXAM: DF knee extended 15° right, 0° left. Knee flexed 15 degrees. 
+Walks with heel strike, rare toe walking.
+Plan: continue current bracing, return in 3 months."
+DEMO-0062,DP090,2024-08-14,Clinic note,"HISTORY: 4 year old male seen for bilateral heel cord tightness.
+Wears bilateral SMOs; no skin issues.
+EXAM: Ankle dorsiflexion with knee extended is 15 degrees bilaterally; with knee flexed 20 degrees. Mild hindfoot valgus, flexible.
+Walks with heel strike, rare toe walking.
+Plan: continue current bracing, return in 3 months."
+DEMO-0063,DP020,2023-04-08,Clinic note,"HISTORY: 5 yo female with cerebral palsy, spastic diplegia, and equinus.
+Outgrowing AFOs; new pair ordered.
+EXAM: Right ankle lacks 10 degrees to neutral with the knee extended. Pes planus, corrects on toe rise.
+Walks with heel strike, rare toe walking.
+Plan: follow up as needed."
+DEMO-0064,DP004,2023-05-22,Clinic note,"HISTORY: 8 yo female with cerebral palsy, spastic diplegia, and equinus.
+AFOs fit well. Parent reports he wears them most of the time.
+EXAM: Dorsiflexion to neutral with knee straight, 20 degrees with knee bent. Standing radiographs reviewed: calcaneal pitch within normal limits.
+Toe walks most of the time. Stable from prior.
+Plan: continue current bracing, return in 3 months."
+DEMO-0065,DP057,2024-04-28,Clinic note,"HISTORY: 4 yo male with cerebral palsy, spastic diplegia, and equinus.
+AFOs fit well. Parent reports he wears them most of the time.
+EXAM: DF knee extended 0° right, -5° left. Knee flexed 20 degrees. Standing radiographs reviewed: calcaneal pitch within normal limits.
+Toe walks most of the time. Stable from prior.
+Plan: continue stretching. Consider serial casting if no improvement."
+DEMO-0066,DP004,2025-07-10,Clinic note,"HISTORY: Follow up for 13 yo male with Achilles contracture.
+Wearing nighttime AFOs 4 nights per week.
+EXAM: Ankle ROM full. 
+Walks with heel strike, rare toe walking.
+Plan: surgery scheduled for gastrocnemius recession."
+DEMO-0067,DP005,2022-08-08,Clinic note,"HISTORY: 3 yo male with idiopathic toe walking.
+Home stretching program only.
+EXAM: DF knee extended -5° right, 5° left. Knee flexed 5 degrees. Standing radiographs reviewed: calcaneal pitch within normal limits.
+Gait: intermittent toe walking, able to heel strike when prompted.
+Plan: continue stretching. Consider serial casting if no improvement."
+DEMO-0068,DP083,2024-12-11,Clinic note,"HISTORY: 2 yo male with idiopathic toe walking.
+Not wearing the AFOs much due to discomfort.
+EXAM: DF knee extended -5° right, 10° left. Knee flexed 15 degrees. Pes planus, corrects on toe rise.
+Walks with heel strike, rare toe walking.
+Plan: continue stretching. Consider serial casting if no improvement."
+DEMO-0069,DP073,2024-10-06,Clinic note,"HISTORY: 2 yo female with cerebral palsy, spastic diplegia, and equinus.
+AFOs fit well. Parent reports he wears them most of the time.
+EXAM: Right ankle lacks 5 degrees to neutral with the knee extended. Standing radiographs reviewed: calcaneal pitch within normal limits.
+Gait: intermittent toe walking, able to heel strike when prompted.
+Plan: new AFOs ordered. Follow up in 4 months."
+DEMO-0070,DP039,2023-08-10,Clinic note,"HISTORY: 8 yo male with idiopathic toe walking.
+AFOs fit well. Parent reports he wears them most of the time.
+EXAM: Ankle dorsiflexion with knee extended is 0 degrees bilaterally; with knee flexed 20 degrees. 
+Walks with heel strike, rare toe walking.
+Plan: follow up as needed."
+DEMO-0071,DP021,2023-09-09,Clinic note,"HISTORY: 4 yo male with idiopathic toe walking.
+EXAM: Ankle ROM full. 
+Gait: intermittent toe walking, able to heel strike when prompted.
+Plan: discussed Achilles lengthening versus gastrocnemius recession; family will consider."
+DEMO-0072,DP068,2023-04-06,Clinic note,"HISTORY: 11 yo male with cerebral palsy, spastic diplegia, and equinus.
+AFOs fit well. Parent reports he wears them most of the time.
+EXAM: Dorsiflexion to neutral with knee straight, 10 degrees with knee bent. 
+Heel-toe gait today. Improved compared with last visit.
+Plan: continue current bracing, return in 3 months."
+DEMO-0073,DP039,2022-01-22,Clinic note,"HISTORY: Follow up for 6 yo female with Achilles contracture.
+Currently wearing SMOs daily for school.
+EXAM: Ankle ROM full. 
+Heel-toe gait today. Improved compared with last visit.
+Plan: follow up as needed."
+DEMO-0074,DP006,2024-05-20,Clinic note,"HISTORY: 12 yo female with idiopathic toe walking.
+Currently wearing SMOs daily for school.
+EXAM: Ankle ROM full. 
+Gait: constant toe walking, no heel strike.
+Plan: new AFOs ordered. Follow up in 4 months."
+DEMO-0075,DP010,2023-06-13,Clinic note,"HISTORY: Follow up for 7 yo female with Achilles contracture.
+AFOs fit well. Parent reports he wears them most of the time.
+EXAM: Ankle ROM full. 
+Toe walks most of the time. Stable from prior.
+Plan: continue current bracing, return in 3 months."
+DEMO-0076,DP015,2022-10-21,Clinic note,"HISTORY: 11 yo female with cerebral palsy, spastic diplegia, and equinus.
+Outgrowing AFOs; new pair ordered.
+EXAM: Ankle dorsiflexion with knee extended is 5 degrees bilaterally; with knee flexed 5 degrees. Mild hindfoot valgus, flexible.
+Heel-toe gait today. Improved compared with last visit.
+Plan: continue stretching. Consider serial casting if no improvement."
+DEMO-0077,DP007,2025-02-03,Clinic note,"HISTORY: 7 yo male with idiopathic toe walking.
+Wears AFO at night only, about 6 nights per week.
+EXAM: Dorsiflexion to neutral with knee straight, 20 degrees with knee bent. Pes planus, corrects on toe rise.
+Toe walks most of the time. Stable from prior.
+Plan: discussed Achilles lengthening versus gastrocnemius recession; family will consider."
+DEMO-0078,DP076,2024-01-03,Clinic note,"HISTORY: 3 yo female with cerebral palsy, spastic diplegia, and equinus.
+Outgrowing AFOs; new pair ordered.
+EXAM: Ankle ROM full. Pes planus, corrects on toe rise.
+Walks with heel strike, rare toe walking.
+Plan: follow up as needed."
+DEMO-0079,DP005,2025-09-05,Clinic note,"HISTORY: 5 yo female with idiopathic toe walking.
+Wearing AFOs, schedule not specified.
+EXAM: Ankle ROM full. Pes planus, corrects on toe rise.
+Toe walks most of the time. Stable from prior.
+Plan: continue current bracing, return in 3 months."
+DEMO-0080,DP088,2023-03-19,Clinic note,"HISTORY: 13 yo male with cerebral palsy, spastic diplegia, and equinus.
+AFOs fit well. Parent reports he wears them most of the time.
+EXAM: Right ankle lacks 15 degrees to neutral with the knee extended. 
+Toe walks most of the time. Stable from prior.
+Plan: new AFOs ordered. Follow up in 4 months."
+DEMO-0081,DP056,2023-12-24,Clinic note,"HISTORY: 11 yo female with idiopathic toe walking.
+Has bilateral AFOs from outside provider.
+EXAM: Dorsiflexion to neutral with knee straight, 20 degrees with knee bent. 
+Gait: intermittent toe walking, able to heel strike when prompted.
+Plan: surgery scheduled for gastrocnemius recession."
+DEMO-0082,DP078,2023-03-22,Clinic note,"HISTORY: 3 yo female with cerebral palsy, spastic diplegia, and equinus.
+Discussed serial casting; family agrees to start next week.
+EXAM: Ankle dorsiflexion with knee extended is 5 degrees bilaterally; with knee flexed 10 degrees. 
+Walks with heel strike, rare toe walking.
+Plan: continue current bracing, return in 3 months."
+DEMO-0083,DP055,2025-06-17,Clinic note,"HISTORY: 12 yo male with idiopathic toe walking.
+EXAM: Dorsiflexion to neutral with knee straight, 5 degrees with knee bent. 
+Gait: constant toe walking, no heel strike.
+Plan: new AFOs ordered. Follow up in 4 months."
+DEMO-0084,DP062,2022-09-15,Clinic note,"HISTORY: Follow up for 7 yo female with Achilles contracture.
+Wearing AFOs, schedule not specified.
+EXAM: Ankle ROM full. 
+Walks with heel strike, rare toe walking.
+Plan: continue current bracing, return in 3 months."
+DEMO-0085,DP060,2025-10-18,Clinic note,"HISTORY: 7 y.o. male referred for toe walking since starting to walk.
+Has bilateral AFOs from outside provider.
+EXAM: Right ankle lacks 10 degrees to neutral with the knee extended. 
+Gait: constant toe walking, no heel strike.
+Plan: continue stretching. Consider serial casting if no improvement."
+DEMO-0086,DP037,2023-07-02,Clinic note,"HISTORY: 8 year old male seen for bilateral heel cord tightness.
+Currently wearing SMOs daily for school.
+EXAM: DF knee extended 0° right, -5° left. Knee flexed 15 degrees. Standing radiographs reviewed: calcaneal pitch within normal limits.
+Gait: intermittent toe walking, able to heel strike when prompted.
+Plan: surgery scheduled for gastrocnemius recession."
+DEMO-0087,DP068,2023-05-15,Clinic note,"HISTORY: Follow up for 13 yo female with Achilles contracture.
+AFOs fit well. Parent reports he wears them most of the time.
+EXAM: Ankle dorsiflexion with knee extended is 15 degrees bilaterally; with knee flexed 20 degrees. 
+Walks with heel strike, rare toe walking.
+Plan: new AFOs ordered. Follow up in 4 months."
+DEMO-0088,DP086,2024-11-28,Clinic note,"HISTORY: Follow up for 7 yo male with Achilles contracture.
+Has bilateral AFOs from outside provider.
+EXAM: Right ankle lacks 5 degrees to neutral with the knee extended. 
+Walks with heel strike, rare toe walking.
+Plan: follow up as needed."
+DEMO-0089,DP032,2024-11-25,Clinic note,"HISTORY: 8 yo female with cerebral palsy, spastic diplegia, and equinus.
+EXAM: Ankle dorsiflexion with knee extended is -10 degrees bilaterally; with knee flexed 20 degrees. Standing radiographs reviewed: calcaneal pitch within normal limits.
+Gait: intermittent toe walking, able to heel strike when prompted.
+Plan: surgery scheduled for gastrocnemius recession."
+DEMO-0090,DP064,2024-08-11,Clinic note,"HISTORY: 7 year old female seen for bilateral heel cord tightness.
+Currently wearing SMOs daily for school.
+EXAM: DF knee extended 0° right, 0° left. Knee flexed 5 degrees. Mild hindfoot valgus, flexible.
+Gait: intermittent toe walking, able to heel strike when prompted.
+Plan: continue stretching. Consider serial casting if no improvement."
+DEMO-0091,DP034,2024-03-18,Clinic note,"HISTORY: 7 y.o. female referred for toe walking since starting to walk.
+Discussed serial casting; family agrees to start next week.
+EXAM: DF knee extended -10° right, 5° left. Knee flexed 10 degrees. Standing radiographs reviewed: calcaneal pitch within normal limits.
+Heel-toe gait today. Improved compared with last visit.
+Plan: continue stretching. Consider serial casting if no improvement."
+DEMO-0092,DP027,2023-10-11,Clinic note,"HISTORY: 13 year old male seen for bilateral heel cord tightness.
+AFOs fit well. Parent reports he wears them most of the time.
+EXAM: Ankle dorsiflexion with knee extended is -10 degrees bilaterally; with knee flexed 15 degrees. 
+Gait: intermittent toe walking, able to heel strike when prompted.
+Plan: continue current bracing, return in 3 months."
+DEMO-0093,DP011,2023-04-25,Clinic note,"HISTORY: 4 yo male with idiopathic toe walking.
+Using night splints most nights; family reports good tolerance.
+EXAM: Dorsiflexion to neutral with knee straight, 20 degrees with knee bent. Standing radiographs reviewed: calcaneal pitch within normal limits.
+Gait: constant toe walking, no heel strike.
+Plan: discussed Achilles lengthening versus gastrocnemius recession; family will consider."
+DEMO-0094,DP082,2024-03-12,Clinic note,"HISTORY: 14 yo female with idiopathic toe walking.
+Wears bilateral SMOs; no skin issues.
+EXAM: Right ankle lacks 15 degrees to neutral with the knee extended. Standing radiographs reviewed: calcaneal pitch within normal limits.
+Heel-toe gait today. Improved compared with last visit.
+Plan: follow up as needed."
+DEMO-0095,DP084,2023-08-06,Clinic note,"HISTORY: 4 yo female with idiopathic toe walking.
+AFOs fit well. Parent reports he wears them most of the time.
+EXAM: Ankle dorsiflexion with knee extended is -10 degrees bilaterally; with knee flexed 20 degrees. Standing radiographs reviewed: calcaneal pitch within normal limits.
+Walks with heel strike, rare toe walking.
+Plan: discussed Achilles lengthening versus gastrocnemius recession; family will consider."
+DEMO-0096,DP062,2022-06-26,Clinic note,"HISTORY: 11 year old male seen for bilateral heel cord tightness.
+Discussed serial casting; family agrees to start next week.
+EXAM: Right ankle lacks 5 degrees to neutral with the knee extended. Mild hindfoot valgus, flexible.
+Gait: constant toe walking, no heel strike.
+Plan: continue current bracing, return in 3 months."
+DEMO-0097,DP019,2025-08-04,Clinic note,"HISTORY: Follow up for 11 yo female with Achilles contracture.
+Currently wearing SMOs daily for school.
+EXAM: Ankle ROM full. Standing radiographs reviewed: calcaneal pitch within normal limits.
+Gait: constant toe walking, no heel strike.
+Plan: new AFOs ordered. Follow up in 4 months."
+DEMO-0098,DP019,2022-04-07,Clinic note,"HISTORY: 9 yo female with cerebral palsy, spastic diplegia, and equinus.
+Completed serial casting x2 with improvement in dorsiflexion.
+EXAM: Ankle ROM full. 
+Heel-toe gait today. Improved compared with last visit.
+Plan: surgery scheduled for gastrocnemius recession."
+DEMO-0099,DP046,2023-04-27,Clinic note,"HISTORY: 5 y.o. female referred for toe walking since starting to walk.
+Discussed serial casting; family agrees to start next week.
+EXAM: Dorsiflexion to neutral with knee straight, 20 degrees with knee bent. Standing radiographs reviewed: calcaneal pitch within normal limits.
+Gait: intermittent toe walking, able to heel strike when prompted.
+Plan: new AFOs ordered. Follow up in 4 months."
+DEMO-0100,DP080,2024-04-14,Clinic note,"HISTORY: Follow up for 12 yo male with Achilles contracture.
+Not wearing the AFOs much due to discomfort.
+EXAM: DF knee extended 15° right, -5° left. Knee flexed 15 degrees. 
+Heel-toe gait today. Improved compared with last visit.
+Plan: follow up as needed."
+DEMO-0101,DP067,2025-10-11,Clinic note,"HISTORY: 4 yo male with idiopathic toe walking.
+Wearing nighttime AFOs 3 nights per week.
+EXAM: Ankle ROM full. 
+Toe walks most of the time. Stable from prior.
+Plan: new AFOs ordered. Follow up in 4 months."
+DEMO-0102,DP021,2023-08-22,Clinic note,"HISTORY: Follow up for 8 yo female with Achilles contracture.
+AFOs fit well. Parent reports he wears them most of the time.
+EXAM: DF knee extended -10° right, 0° left. Knee flexed 15 degrees. Pes planus, corrects on toe rise.
+Gait: constant toe walking, no heel strike.
+Plan: new AFOs ordered. Follow up in 4 months."
+DEMO-0103,DP036,2023-12-07,Clinic note,"HISTORY: 14 yo male with cerebral palsy, spastic diplegia, and equinus.
+Not wearing the AFOs much due to discomfort.
+EXAM: DF knee extended -10° right, 5° left. Knee flexed 15 degrees. 
+Walks with heel strike, rare toe walking.
+Plan: continue stretching. Consider serial casting if no improvement."
+DEMO-0104,DP035,2024-05-02,Clinic note,"HISTORY: 14 y.o. female referred for toe walking since starting to walk.
+Completed serial casting x3 with improvement in dorsiflexion.
+EXAM: Ankle ROM full. Pes planus, corrects on toe rise.
+Heel-toe gait today. Improved compared with last visit.
+Plan: new AFOs ordered. Follow up in 4 months."
+DEMO-0105,DP035,2025-12-26,Clinic note,"HISTORY: Follow up for 7 yo female with Achilles contracture.
+Home stretching program only.
+EXAM: DF knee extended -10° right, 0° left. Knee flexed 20 degrees. 
+Gait: constant toe walking, no heel strike.
+Plan: surgery scheduled for gastrocnemius recession."
+DEMO-0106,DP041,2022-01-25,Clinic note,"HISTORY: 4 yo female with cerebral palsy, spastic diplegia, and equinus.
+AFOs fit well. Parent reports he wears them most of the time.
+EXAM: DF knee extended -10° right, 5° left. Knee flexed 5 degrees. Pes planus, corrects on toe rise.
+Toe walks most of the time. Stable from prior.
+Plan: surgery scheduled for gastrocnemius recession."
+DEMO-0107,DP063,2025-03-11,Clinic note,"HISTORY: 5 yo female with cerebral palsy, spastic diplegia, and equinus.
+Home stretching program only.
+EXAM: Ankle dorsiflexion with knee extended is -10 degrees bilaterally; with knee flexed 15 degrees. Standing radiographs reviewed: calcaneal pitch within normal limits.
+Gait: constant toe walking, no heel strike.
+Plan: new AFOs ordered. Follow up in 4 months."
+DEMO-0108,DP009,2024-06-28,Clinic note,"HISTORY: 10 year old male seen for bilateral heel cord tightness.
+AFOs fit well. Parent reports he wears them most of the time.
+EXAM: DF knee extended 5° right, 5° left. Knee flexed 5 degrees. Pes planus, corrects on toe rise.
+Walks with heel strike, rare toe walking.
+Plan: new AFOs ordered. Follow up in 4 months."
+DEMO-0109,DP046,2024-06-03,Clinic note,"HISTORY: 14 yo female with cerebral palsy, spastic diplegia, and equinus.
+Completed serial casting x4 with improvement in dorsiflexion.
+EXAM: Right ankle lacks 5 degrees to neutral with the knee extended. 
+Gait: intermittent toe walking, able to heel strike when prompted.
+Plan: surgery scheduled for gastrocnemius recession."
+DEMO-0110,DP031,2022-10-13,Clinic note,"HISTORY: 8 year old female seen for bilateral heel cord tightness.
+Not wearing the AFOs much due to discomfort.
+EXAM: Ankle ROM full. Pes planus, corrects on toe rise.
+Gait: intermittent toe walking, able to heel strike when prompted.
+Plan: follow up as needed."
+DEMO-0111,DP025,2024-02-23,Clinic note,"HISTORY: Follow up for 2 yo female with Achilles contracture.
+No bracing at this time.
+EXAM: Dorsiflexion to neutral with knee straight, 5 degrees with knee bent. Standing radiographs reviewed: calcaneal pitch within normal limits.
+Gait: intermittent toe walking, able to heel strike when prompted.
+Plan: continue stretching. Consider serial casting if no improvement."
+DEMO-0112,DP055,2025-05-16,Clinic note,"HISTORY: 14 yo female with idiopathic toe walking.
+Has bilateral AFOs from outside provider.
+EXAM: Ankle ROM full. Standing radiographs reviewed: calcaneal pitch within normal limits.
+Gait: constant toe walking, no heel strike.
+Plan: surgery scheduled for gastrocnemius recession."
+DEMO-0113,DP047,2025-02-05,Clinic note,"HISTORY: Follow up for 7 yo female with Achilles contracture.
+EXAM: Right ankle lacks 10 degrees to neutral with the knee extended. Mild hindfoot valgus, flexible.
+Walks with heel strike, rare toe walking.
+Plan: continue stretching. Consider serial casting if no improvement."
+DEMO-0114,DP061,2022-01-25,Clinic note,"HISTORY: 14 yo male with cerebral palsy, spastic diplegia, and equinus.
+Wears AFO at night only, about 6 nights per week.
+EXAM: Ankle ROM full. Standing radiographs reviewed: calcaneal pitch within normal limits.
+Heel-toe gait today. Improved compared with last visit.
+Plan: follow up as needed."
+DEMO-0115,DP076,2024-05-17,Clinic note,"HISTORY: Follow up for 8 yo male with Achilles contracture.
+Has bilateral AFOs from outside provider.
+EXAM: Ankle dorsiflexion with knee extended is 10 degrees bilaterally; with knee flexed 20 degrees. Pes planus, corrects on toe rise.
+Toe walks most of the time. Stable from prior.
+Plan: follow up as needed."
+DEMO-0116,DP038,2023-08-26,Clinic note,"HISTORY: Follow up for 8 yo male with Achilles contracture.
+Outgrowing AFOs; new pair ordered.
+EXAM: Dorsiflexion to neutral with knee straight, 20 degrees with knee bent. Standing radiographs reviewed: calcaneal pitch within normal limits.
+Heel-toe gait today. Improved compared with last visit.
+Plan: continue current bracing, return in 3 months."
+DEMO-0117,DP012,2025-03-01,Clinic note,"HISTORY: 3 y.o. female referred for toe walking since starting to walk.
+Wearing AFOs, schedule not specified.
+EXAM: Ankle dorsiflexion with knee extended is -5 degrees bilaterally; with knee flexed 10 degrees. 
+Heel-toe gait today. Improved compared with last visit.
+Plan: continue stretching. Consider serial casting if no improvement."
+DEMO-0118,DP017,2025-02-19,Clinic note,"HISTORY: 8 y.o. female referred for toe walking since starting to walk.
+Serial casting #1 applied today in maximal dorsiflexion.
+EXAM: Right ankle lacks 10 degrees to neutral with the knee extended. Pes planus, corrects on toe rise.
+Walks with heel strike, rare toe walking.
+Plan: new AFOs ordered. Follow up in 4 months."
+DEMO-0119,DP054,2025-06-13,Clinic note,"HISTORY: 6 y.o. female referred for toe walking since starting to walk.
+Has bilateral AFOs from outside provider.
+EXAM: Dorsiflexion to neutral with knee straight, 10 degrees with knee bent. Standing radiographs reviewed: calcaneal pitch within normal limits.
+Walks with heel strike, rare toe walking.
+Plan: continue stretching. Consider serial casting if no improvement."
+DEMO-0120,DP083,2023-02-20,Clinic note,"HISTORY: 6 y.o. male referred for toe walking since starting to walk.
+Discussed serial casting; family agrees to start next week.
+EXAM: Ankle dorsiflexion with knee extended is 5 degrees bilaterally; with knee flexed 5 degrees. 
+Gait: constant toe walking, no heel strike.
+Plan: surgery scheduled for gastrocnemius recession."
+DEMO-0121,DP027,2023-07-06,Clinic note,"HISTORY: 10 year old female seen for bilateral heel cord tightness.
+Currently wearing SMOs daily for school.
+EXAM: Dorsiflexion to neutral with knee straight, 5 degrees with knee bent. 
+Gait: constant toe walking, no heel strike.
+Plan: continue current bracing, return in 3 months."
+DEMO-0122,DP068,2023-02-07,Clinic note,"HISTORY: Follow up for 3 yo male with Achilles contracture.
+Currently wearing SMOs daily for school.
+EXAM: Right ankle lacks 15 degrees to neutral with the knee extended. Mild hindfoot valgus, flexible.
+Gait: constant toe walking, no heel strike.
+Plan: follow up as needed."
+DEMO-0123,DP016,2025-04-11,Clinic note,"HISTORY: 6 year old male seen for bilateral heel cord tightness.
+Not wearing the AFOs much due to discomfort.
+EXAM: Ankle ROM full. Pes planus, corrects on toe rise.
+Gait: constant toe walking, no heel strike.
+Plan: surgery scheduled for gastrocnemius recession."
+DEMO-0124,DP058,2022-04-19,Clinic note,"HISTORY: 13 y.o. male referred for toe walking since starting to walk.
+Has bilateral AFOs from outside provider.
+EXAM: Right ankle lacks 10 degrees to neutral with the knee extended. 
+Gait: intermittent toe walking, able to heel strike when prompted.
+Plan: continue current bracing, return in 3 months."
+DEMO-0125,DP038,2023-05-11,Clinic note,"HISTORY: 5 yo female with cerebral palsy, spastic diplegia, and equinus.
+Wears bilateral SMOs; no skin issues.
+EXAM: Right ankle lacks 10 degrees to neutral with the knee extended. Mild hindfoot valgus, flexible.
+Toe walks most of the time. Stable from prior.
+Plan: surgery scheduled for gastrocnemius recession."
+DEMO-0126,DP051,2024-11-11,Clinic note,"HISTORY: 4 y.o. male referred for toe walking since starting to walk.
+Completed serial casting x4 with improvement in dorsiflexion.
+EXAM: Ankle dorsiflexion with knee extended is 0 degrees bilaterally; with knee flexed 10 degrees. 
+Gait: constant toe walking, no heel strike.
+Plan: surgery scheduled for gastrocnemius recession."
+DEMO-0127,DP045,2025-02-22,Clinic note,"HISTORY: 6 yo female with idiopathic toe walking.
+AFOs fit well. Parent reports he wears them most of the time.
+EXAM: Ankle dorsiflexion with knee extended is -10 degrees bilaterally; with knee flexed 15 degrees. 
+Gait: intermittent toe walking, able to heel strike when prompted.
+Plan: surgery scheduled for gastrocnemius recession."
+DEMO-0128,DP065,2025-04-22,Clinic note,"HISTORY: 9 year old female seen for bilateral heel cord tightness.
+Currently wearing SMOs daily for school.
+EXAM: Right ankle lacks 10 degrees to neutral with the knee extended. 
+Gait: constant toe walking, no heel strike.
+Plan: continue stretching. Consider serial casting if no improvement."
+DEMO-0129,DP042,2024-04-28,Clinic note,"HISTORY: Follow up for 2 yo male with Achilles contracture.
+Using night splints most nights; family reports good tolerance.
+EXAM: Right ankle lacks 5 degrees to neutral with the knee extended. 
+Walks with heel strike, rare toe walking.
+Plan: new AFOs ordered. Follow up in 4 months."
+DEMO-0130,DP007,2025-10-14,Clinic note,"HISTORY: 6 y.o. female referred for toe walking since starting to walk.
+Not wearing the AFOs much due to discomfort.
+EXAM: Ankle ROM full. Standing radiographs reviewed: calcaneal pitch within normal limits.
+Gait: intermittent toe walking, able to heel strike when prompted.
+Plan: continue stretching. Consider serial casting if no improvement."
+DEMO-0131,DP056,2025-02-26,Clinic note,"HISTORY: 14 yo male with cerebral palsy, spastic diplegia, and equinus.
+Discussed serial casting; family agrees to start next week.
+EXAM: Ankle ROM full. Standing radiographs reviewed: calcaneal pitch within normal limits.
+Toe walks most of the time. Stable from prior.
+Plan: continue stretching. Consider serial casting if no improvement."
+DEMO-0132,DP083,2022-01-03,Clinic note,"HISTORY: 2 y.o. male referred for toe walking since starting to walk.
+Wears bilateral SMOs; no skin issues.
+EXAM: Ankle dorsiflexion with knee extended is 15 degrees bilaterally; with knee flexed 20 degrees. Standing radiographs reviewed: calcaneal pitch within normal limits.
+Heel-toe gait today. Improved compared with last visit.
+Plan: surgery scheduled for gastrocnemius recession."
+DEMO-0133,DP077,2025-02-24,Clinic note,"HISTORY: 7 year old male seen for bilateral heel cord tightness.
+Not wearing the AFOs much due to discomfort.
+EXAM: DF knee extended 15° right, 10° left. Knee flexed 10 degrees. Pes planus, corrects on toe rise.
+Walks with heel strike, rare toe walking.
+Plan: continue stretching. Consider serial casting if no improvement."
+DEMO-0134,DP040,2025-07-22,Clinic note,"HISTORY: Follow up for 12 yo male with Achilles contracture.
+Discussed serial casting; family agrees to start next week.
+EXAM: Dorsiflexion to neutral with knee straight, 20 degrees with knee bent. Pes planus, corrects on toe rise.
+Heel-toe gait today. Improved compared with last visit.
+Plan: continue stretching. Consider serial casting if no improvement."
+DEMO-0135,DP042,2023-12-09,Clinic note,"HISTORY: 8 yo female with cerebral palsy, spastic diplegia, and equinus.
+Currently wearing SMOs daily for school.
+EXAM: Dorsiflexion to neutral with knee straight, 20 degrees with knee bent. Standing radiographs reviewed: calcaneal pitch within normal limits.
+Gait: intermittent toe walking, able to heel strike when prompted.
+Plan: follow up as needed."
+DEMO-0136,DP018,2023-09-24,Clinic note,"HISTORY: Follow up for 4 yo female with Achilles contracture.
+Not wearing the AFOs much due to discomfort.
+EXAM: DF knee extended -5° right, 0° left. Knee flexed 20 degrees. Standing radiographs reviewed: calcaneal pitch within normal limits.
+Toe walks most of the time. Stable from prior.
+Plan: follow up as needed."
+DEMO-0137,DP021,2023-11-27,Clinic note,"HISTORY: 11 yo male with idiopathic toe walking.
+Using night splints most nights; family reports good tolerance.
+EXAM: Dorsiflexion to neutral with knee straight, 15 degrees with knee bent. Pes planus, corrects on toe rise.
+Heel-toe gait today. Improved compared with last visit.
+Plan: follow up as needed."
+DEMO-0138,DP087,2022-12-03,Clinic note,"HISTORY: 8 year old male seen for bilateral heel cord tightness.
+Home stretching program only.
+EXAM: Right ankle lacks 5 degrees to neutral with the knee extended. 
+Gait: intermittent toe walking, able to heel strike when prompted.
+Plan: continue stretching. Consider serial casting if no improvement."
+DEMO-0139,DP023,2024-01-01,Clinic note,"HISTORY: 3 y.o. female referred for toe walking since starting to walk.
+Not wearing the AFOs much due to discomfort.
+EXAM: Dorsiflexion to neutral with knee straight, 5 degrees with knee bent. 
+Gait: constant toe walking, no heel strike.
+Plan: new AFOs ordered. Follow up in 4 months."
+DEMO-0140,DP025,2023-03-03,Clinic note,"HISTORY: 5 y.o. male referred for toe walking since starting to walk.
+Not wearing the AFOs much due to discomfort.
+EXAM: Ankle dorsiflexion with knee extended is 10 degrees bilaterally; with knee flexed 15 degrees. Pes planus, corrects on toe rise.
+Heel-toe gait today. Improved compared with last visit.
+Plan: new AFOs ordered. Follow up in 4 months."
+DEMO-0141,DP012,2024-02-14,Clinic note,"HISTORY: 7 yo female with cerebral palsy, spastic diplegia, and equinus.
+Home stretching program only.
+EXAM: Right ankle lacks 15 degrees to neutral with the knee extended. Standing radiographs reviewed: calcaneal pitch within normal limits.
+Toe walks most of the time. Stable from prior.
+Plan: continue stretching. Consider serial casting if no improvement."
+DEMO-0142,DP080,2025-03-06,Clinic note,"HISTORY: Follow up for 6 yo male with Achilles contracture.
+Not wearing the AFOs much due to discomfort.
+EXAM: Dorsiflexion to neutral with knee straight, 5 degrees with knee bent. Mild hindfoot valgus, flexible.
+Heel-toe gait today. Improved compared with last visit.
+Plan: discussed Achilles lengthening versus gastrocnemius recession; family will consider."
+DEMO-0143,DP052,2024-02-16,Clinic note,"HISTORY: 14 y.o. female referred for toe walking since starting to walk.
+Serial casting #1 applied today in maximal dorsiflexion.
+EXAM: Ankle dorsiflexion with knee extended is -5 degrees bilaterally; with knee flexed 15 degrees. 
+Heel-toe gait today. Improved compared with last visit.
+Plan: follow up as needed."
+DEMO-0144,DP073,2025-07-24,Clinic note,"HISTORY: 6 yo female with idiopathic toe walking.
+No bracing at this time.
+EXAM: Right ankle lacks 5 degrees to neutral with the knee extended. Pes planus, corrects on toe rise.
+Gait: constant toe walking, no heel strike.
+Plan: follow up as needed."
+DEMO-0145,DP053,2022-11-14,Clinic note,"HISTORY: 10 y.o. male referred for toe walking since starting to walk.
+Completed serial casting x4 with improvement in dorsiflexion.
+EXAM: Ankle dorsiflexion with knee extended is -5 degrees bilaterally; with knee flexed 10 degrees. 
+Toe walks most of the time. Stable from prior.
+Plan: follow up as needed."
+DEMO-0146,DP056,2022-12-03,Clinic note,"HISTORY: 12 y.o. male referred for toe walking since starting to walk.
+Home stretching program only.
+EXAM: Ankle ROM full. 
+Toe walks most of the time. Stable from prior.
+Plan: continue stretching. Consider serial casting if no improvement."
+DEMO-0147,DP060,2023-09-14,Clinic note,"HISTORY: 13 yo female with idiopathic toe walking.
+Currently wearing SMOs daily for school.
+EXAM: Dorsiflexion to neutral with knee straight, 5 degrees with knee bent. Standing radiographs reviewed: calcaneal pitch within normal limits.
+Toe walks most of the time. Stable from prior.
+Plan: follow up as needed."
+DEMO-0148,DP036,2025-11-07,Clinic note,"HISTORY: 10 yo female with idiopathic toe walking.
+Not wearing the AFOs much due to discomfort.
+EXAM: Ankle dorsiflexion with knee extended is 10 degrees bilaterally; with knee flexed 15 degrees. Standing radiographs reviewed: calcaneal pitch within normal limits.
+Gait: intermittent toe walking, able to heel strike when prompted.
+Plan: continue current bracing, return in 3 months."
+DEMO-0149,DP017,2023-09-19,Clinic note,"HISTORY: 12 y.o. female referred for toe walking since starting to walk.
+Not wearing the AFOs much due to discomfort.
+EXAM: DF knee extended -5° right, 10° left. Knee flexed 20 degrees. Mild hindfoot valgus, flexible.
+Walks with heel strike, rare toe walking.
+Plan: new AFOs ordered. Follow up in 4 months."
+DEMO-0150,DP076,2023-10-14,Clinic note,"HISTORY: 11 yo female with idiopathic toe walking.
+No bracing at this time.
+EXAM: Ankle dorsiflexion with knee extended is -5 degrees bilaterally; with knee flexed 15 degrees. 
+Gait: constant toe walking, no heel strike.
+Plan: follow up as needed."
+DEMO-0151,DP031,2023-02-26,Clinic note,"HISTORY: 13 y.o. female referred for toe walking since starting to walk.
+Discussed serial casting; family agrees to start next week.
+EXAM: Dorsiflexion to neutral with knee straight, 10 degrees with knee bent. 
+Gait: constant toe walking, no heel strike.
+Plan: discussed Achilles lengthening versus gastrocnemius recession; family will consider."
+DEMO-0152,DP035,2022-02-20,Clinic note,"HISTORY: Follow up for 10 yo female with Achilles contracture.
+AFOs fit well. Parent reports he wears them most of the time.
+EXAM: Right ankle lacks 5 degrees to neutral with the knee extended. 
+Heel-toe gait today. Improved compared with last visit.
+Plan: discussed Achilles lengthening versus gastrocnemius recession; family will consider."
+DEMO-0153,DP062,2025-10-15,Clinic note,"HISTORY: Follow up for 7 yo male with Achilles contracture.
+Wearing AFOs, schedule not specified.
+EXAM: Dorsiflexion to neutral with knee straight, 5 degrees with knee bent. Mild hindfoot valgus, flexible.
+Toe walks most of the time. Stable from prior.
+Plan: surgery scheduled for gastrocnemius recession."
+DEMO-0154,DP026,2022-03-12,Clinic note,"HISTORY: 9 yo male with cerebral palsy, spastic diplegia, and equinus.
+Outgrowing AFOs; new pair ordered.
+EXAM: DF knee extended 15° right, 5° left. Knee flexed 15 degrees. Pes planus, corrects on toe rise.
+Gait: constant toe walking, no heel strike.
+Plan: continue current bracing, return in 3 months."
+DEMO-0155,DP054,2022-10-14,Clinic note,"HISTORY: 12 year old male seen for bilateral heel cord tightness.
+Wearing AFOs, schedule not specified.
+EXAM: Ankle dorsiflexion with knee extended is -5 degrees bilaterally; with knee flexed 10 degrees. Mild hindfoot valgus, flexible.
+Heel-toe gait today. Improved compared with last visit.
+Plan: continue current bracing, return in 3 months."
+DEMO-0156,DP079,2023-07-11,Clinic note,"HISTORY: 11 y.o. male referred for toe walking since starting to walk.
+Wears bilateral SMOs; no skin issues.
+EXAM: Dorsiflexion to neutral with knee straight, 10 degrees with knee bent. Mild hindfoot valgus, flexible.
+Walks with heel strike, rare toe walking.
+Plan: continue current bracing, return in 3 months."
+DEMO-0157,DP038,2023-11-02,Clinic note,"HISTORY: 3 yo female with cerebral palsy, spastic diplegia, and equinus.
+Has bilateral AFOs from outside provider.
+EXAM: Ankle ROM full. 
+Gait: intermittent toe walking, able to heel strike when prompted.
+Plan: continue current bracing, return in 3 months."
+DEMO-0158,DP025,2023-08-13,Clinic note,"HISTORY: 7 yo female with cerebral palsy, spastic diplegia, and equinus.
+Currently wearing SMOs daily for school.
+EXAM: Dorsiflexion to neutral with knee straight, 10 degrees with knee bent. Standing radiographs reviewed: calcaneal pitch within normal limits.
+Walks with heel strike, rare toe walking.
+Plan: surgery scheduled for gastrocnemius recession."
+DEMO-0159,DP026,2025-10-14,Clinic note,"HISTORY: 6 y.o. female referred for toe walking since starting to walk.
+Wearing AFOs, schedule not specified.
+EXAM: DF knee extended 10° right, -5° left. Knee flexed 5 degrees. Standing radiographs reviewed: calcaneal pitch within normal limits.
+Gait: constant toe walking, no heel strike.
+Plan: new AFOs ordered. Follow up in 4 months."
+DEMO-0160,DP068,2023-03-11,Clinic note,"HISTORY: 13 yo female with idiopathic toe walking.
+Currently wearing SMOs daily for school.
+EXAM: DF knee extended 0° right, 5° left. Knee flexed 15 degrees. Pes planus, corrects on toe rise.
+Heel-toe gait today. Improved compared with last visit.
+Plan: surgery scheduled for gastrocnemius recession."
+DEMO-0161,DP040,2023-10-05,Clinic note,"HISTORY: 9 year old female seen for bilateral heel cord tightness.
+AFOs fit well. Parent reports he wears them most of the time.
+EXAM: Dorsiflexion to neutral with knee straight, 5 degrees with knee bent. 
+Toe walks most of the time. Stable from prior.
+Plan: continue stretching. Consider serial casting if no improvement."
+DEMO-0162,DP012,2023-08-22,Clinic note,"HISTORY: 9 year old female seen for bilateral heel cord tightness.
+Not wearing the AFOs much due to discomfort.
+EXAM: Dorsiflexion to neutral with knee straight, 15 degrees with knee bent. Pes planus, corrects on toe rise.
+Gait: intermittent toe walking, able to heel strike when prompted.
+Plan: follow up as needed."
+DEMO-0163,DP063,2024-10-01,Clinic note,"HISTORY: 14 year old female seen for bilateral heel cord tightness.
+AFOs fit well. Parent reports he wears them most of the time.
+EXAM: Ankle dorsiflexion with knee extended is 5 degrees bilaterally; with knee flexed 15 degrees. Pes planus, corrects on toe rise.
+Heel-toe gait today. Improved compared with last visit.
+Plan: continue stretching. Consider serial casting if no improvement."
+DEMO-0164,DP056,2023-01-03,Clinic note,"HISTORY: Follow up for 11 yo male with Achilles contracture.
+Wears AFO at night only, about 3 nights per week.
+EXAM: Ankle dorsiflexion with knee extended is 0 degrees bilaterally; with knee flexed 10 degrees. 
+Walks with heel strike, rare toe walking.
+Plan: discussed Achilles lengthening versus gastrocnemius recession; family will consider."
+DEMO-0165,DP010,2022-01-26,Clinic note,"HISTORY: 4 yo male with idiopathic toe walking.
+Discussed serial casting; family agrees to start next week.
+EXAM: DF knee extended 5° right, 0° left. Knee flexed 20 degrees. 
+Walks with heel strike, rare toe walking.
+Plan: follow up as needed."
+DEMO-0166,DP031,2025-09-24,Clinic note,"HISTORY: 11 yo male with idiopathic toe walking.
+Discussed serial casting; family agrees to start next week.
+EXAM: DF knee extended 10° right, 0° left. Knee flexed 5 degrees. Pes planus, corrects on toe rise.
+Gait: constant toe walking, no heel strike.
+Plan: continue stretching. Consider serial casting if no improvement."
+DEMO-0167,DP083,2022-05-23,Clinic note,"HISTORY: Follow up for 10 yo male with Achilles contracture.
+Wearing AFOs, schedule not specified.
+EXAM: Dorsiflexion to neutral with knee straight, 15 degrees with knee bent. Pes planus, corrects on toe rise.
+Gait: intermittent toe walking, able to heel strike when prompted.
+Plan: discussed Achilles lengthening versus gastrocnemius recession; family will consider."
+DEMO-0168,DP035,2024-11-21,Clinic note,"HISTORY: 3 yo female with cerebral palsy, spastic diplegia, and equinus.
+EXAM: Ankle dorsiflexion with knee extended is 0 degrees bilaterally; with knee flexed 5 degrees. Mild hindfoot valgus, flexible.
+Gait: constant toe walking, no heel strike.
+Plan: new AFOs ordered. Follow up in 4 months."
+DEMO-0169,DP005,2023-06-17,Clinic note,"HISTORY: 4 yo female with idiopathic toe walking.
+AFOs fit well. Parent reports he wears them most of the time.
+EXAM: Dorsiflexion to neutral with knee straight, 15 degrees with knee bent. 
+Walks with heel strike, rare toe walking.
+Plan: surgery scheduled for gastrocnemius recession."
+DEMO-0170,DP071,2022-10-11,Clinic note,"HISTORY: Follow up for 10 yo female with Achilles contracture.
+Wearing AFOs, schedule not specified.
+EXAM: Dorsiflexion to neutral with knee straight, 10 degrees with knee bent. Standing radiographs reviewed: calcaneal pitch within normal limits.
+Gait: intermittent toe walking, able to heel strike when prompted.
+Plan: new AFOs ordered. Follow up in 4 months."
+DEMO-0171,DP052,2024-03-03,Clinic note,"HISTORY: 12 yo female with idiopathic toe walking.
+Outgrowing AFOs; new pair ordered.
+EXAM: Dorsiflexion to neutral with knee straight, 15 degrees with knee bent. 
+Walks with heel strike, rare toe walking.
+Plan: follow up as needed."
+DEMO-0172,DP017,2025-05-20,Clinic note,"HISTORY: 5 y.o. male referred for toe walking since starting to walk.
+AFOs fit well. Parent reports he wears them most of the time.
+EXAM: Ankle dorsiflexion with knee extended is 15 degrees bilaterally; with knee flexed 20 degrees. 
+Toe walks most of the time. Stable from prior.
+Plan: continue current bracing, return in 3 months."
+DEMO-0173,DP025,2025-06-05,Clinic note,"HISTORY: 13 year old male seen for bilateral heel cord tightness.
+Not wearing the AFOs much due to discomfort.
+EXAM: DF knee extended -10° right, 5° left. Knee flexed 5 degrees. 
+Gait: intermittent toe walking, able to heel strike when prompted.
+Plan: continue stretching. Consider serial casting if no improvement."
+DEMO-0174,DP011,2022-06-13,Clinic note,"HISTORY: 10 yo male with cerebral palsy, spastic diplegia, and equinus.
+Discussed serial casting; family agrees to start next week.
+EXAM: DF knee extended 0° right, -5° left. Knee flexed 10 degrees. 
+Toe walks most of the time. Stable from prior.
+Plan: continue current bracing, return in 3 months."
+DEMO-0175,DP033,2023-11-02,Clinic note,"HISTORY: 3 y.o. female referred for toe walking since starting to walk.
+Not wearing the AFOs much due to discomfort.
+EXAM: Ankle ROM full. 
+Gait: intermittent toe walking, able to heel strike when prompted.
+Plan: new AFOs ordered. Follow up in 4 months."
+DEMO-0176,DP022,2023-04-13,Clinic note,"HISTORY: 7 yo male with cerebral palsy, spastic diplegia, and equinus.
+Serial casting #3 applied today in maximal dorsiflexion.
+EXAM: Ankle ROM full. Pes planus, corrects on toe rise.
+Heel-toe gait today. Improved compared with last visit.
+Plan: discussed Achilles lengthening versus gastrocnemius recession; family will consider."
+DEMO-0177,DP072,2022-02-08,Clinic note,"HISTORY: 2 yo male with idiopathic toe walking.
+Wears AFO at night only, about 6 nights per week.
+EXAM: DF knee extended -5° right, -5° left. Knee flexed 15 degrees. 
+Toe walks most of the time. Stable from prior.
+Plan: discussed Achilles lengthening versus gastrocnemius recession; family will consider."
+DEMO-0178,DP074,2023-11-24,Clinic note,"HISTORY: 7 year old male seen for bilateral heel cord tightness.
+AFOs fit well. Parent reports he wears them most of the time.
+EXAM: Dorsiflexion to neutral with knee straight, 5 degrees with knee bent. 
+Gait: intermittent toe walking, able to heel strike when prompted.
+Plan: new AFOs ordered. Follow up in 4 months."
+DEMO-0179,DP089,2023-04-07,Clinic note,"HISTORY: 9 yo female with cerebral palsy, spastic diplegia, and equinus.
+Home stretching program only.
+EXAM: DF knee extended 15° right, 0° left. Knee flexed 15 degrees. Mild hindfoot valgus, flexible.
+Walks with heel strike, rare toe walking.
+Plan: continue stretching. Consider serial casting if no improvement."
+DEMO-0180,DP024,2022-02-04,Clinic note,"HISTORY: 5 y.o. male referred for toe walking since starting to walk.
+Discussed serial casting; family agrees to start next week.
+EXAM: Ankle ROM full. Standing radiographs reviewed: calcaneal pitch within normal limits.
+Toe walks most of the time. Stable from prior.
+Plan: continue current bracing, return in 3 months."
+DEMO-0181,DP056,2022-07-03,Clinic note,"HISTORY: Follow up for 10 yo male with Achilles contracture.
+No bracing at this time.
+EXAM: Ankle dorsiflexion with knee extended is 0 degrees bilaterally; with knee flexed 10 degrees. Standing radiographs reviewed: calcaneal pitch within normal limits.
+Gait: intermittent toe walking, able to heel strike when prompted.
+Plan: discussed Achilles lengthening versus gastrocnemius recession; family will consider."
+DEMO-0182,DP029,2024-05-13,Clinic note,"HISTORY: 10 year old male seen for bilateral heel cord tightness.
+AFOs fit well. Parent reports he wears them most of the time.
+EXAM: Dorsiflexion to neutral with knee straight, 20 degrees with knee bent. Mild hindfoot valgus, flexible.
+Heel-toe gait today. Improved compared with last visit.
+Plan: discussed Achilles lengthening versus gastrocnemius recession; family will consider."
+DEMO-0183,DP074,2022-05-24,Clinic note,"HISTORY: 14 yo male with idiopathic toe walking.
+AFOs fit well. Parent reports he wears them most of the time.
+EXAM: DF knee extended -5° right, 5° left. Knee flexed 10 degrees. Standing radiographs reviewed: calcaneal pitch within normal limits.
+Gait: constant toe walking, no heel strike.
+Plan: follow up as needed."
+DEMO-0184,DP090,2024-07-03,Clinic note,"HISTORY: 8 year old male seen for bilateral heel cord tightness.
+Has bilateral AFOs from outside provider.
+EXAM: Ankle dorsiflexion with knee extended is 5 degrees bilaterally; with knee flexed 5 degrees. Mild hindfoot valgus, flexible.
+Gait: constant toe walking, no heel strike.
+Plan: discussed Achilles lengthening versus gastrocnemius recession; family will consider."
+DEMO-0185,DP007,2024-03-05,Clinic note,"HISTORY: 11 y.o. male referred for toe walking since starting to walk.
+AFOs fit well. Parent reports he wears them most of the time.
+EXAM: Dorsiflexion to neutral with knee straight, 5 degrees with knee bent. 
+Heel-toe gait today. Improved compared with last visit.
+Plan: surgery scheduled for gastrocnemius recession."
+DEMO-0186,DP021,2022-11-28,Clinic note,"HISTORY: 4 yo female with cerebral palsy, spastic diplegia, and equinus.
+Home stretching program only.
+EXAM: DF knee extended 0° right, 10° left. Knee flexed 5 degrees. Standing radiographs reviewed: calcaneal pitch within normal limits.
+Walks with heel strike, rare toe walking.
+Plan: surgery scheduled for gastrocnemius recession."
+DEMO-0187,DP078,2022-09-06,Clinic note,"HISTORY: Follow up for 3 yo female with Achilles contracture.
+AFOs fit well. Parent reports he wears them most of the time.
+EXAM: DF knee extended 15° right, 10° left. Knee flexed 10 degrees. Pes planus, corrects on toe rise.
+Gait: intermittent toe walking, able to heel strike when prompted.
+Plan: follow up as needed."
+DEMO-0188,DP054,2024-09-09,Clinic note,"HISTORY: 10 year old male seen for bilateral heel cord tightness.
+Not wearing the AFOs much due to discomfort.
+EXAM: Right ankle lacks 15 degrees to neutral with the knee extended. Standing radiographs reviewed: calcaneal pitch within normal limits.
+Walks with heel strike, rare toe walking.
+Plan: follow up as needed."
+DEMO-0189,DP018,2022-02-13,Clinic note,"HISTORY: 9 year old female seen for bilateral heel cord tightness.
+Has bilateral AFOs from outside provider.
+EXAM: Ankle ROM full. Standing radiographs reviewed: calcaneal pitch within normal limits.
+Heel-toe gait today. Improved compared with last visit.
+Plan: continue stretching. Consider serial casting if no improvement."
+DEMO-0190,DP001,2025-09-24,Clinic note,"HISTORY: Follow up for 12 yo male with Achilles contracture.
+Discussed serial casting; family agrees to start next week.
+EXAM: Right ankle lacks 15 degrees to neutral with the knee extended. Mild hindfoot valgus, flexible.
+Walks with heel strike, rare toe walking.
+Plan: discussed Achilles lengthening versus gastrocnemius recession; family will consider."
+DEMO-0191,DP089,2023-09-19,Clinic note,"HISTORY: 12 y.o. male referred for toe walking since starting to walk.
+Wearing AFOs, schedule not specified.
+EXAM: Dorsiflexion to neutral with knee straight, 15 degrees with knee bent. Standing radiographs reviewed: calcaneal pitch within normal limits.
+Toe walks most of the time. Stable from prior.
+Plan: surgery scheduled for gastrocnemius recession."
+DEMO-0192,DP083,2024-05-19,Clinic note,"HISTORY: 11 yo male with idiopathic toe walking.
+Wearing AFOs, schedule not specified.
+EXAM: Right ankle lacks 10 degrees to neutral with the knee extended. 
+Gait: constant toe walking, no heel strike.
+Plan: continue stretching. Consider serial casting if no improvement."
+DEMO-0193,DP086,2023-01-21,Clinic note,"HISTORY: 6 y.o. female referred for toe walking since starting to walk.
+Outgrowing AFOs; new pair ordered.
+EXAM: Dorsiflexion to neutral with knee straight, 15 degrees with knee bent. 
+Gait: constant toe walking, no heel strike.
+Plan: follow up as needed."
+DEMO-0194,DP017,2022-08-02,Clinic note,"HISTORY: 13 yo female with cerebral palsy, spastic diplegia, and equinus.
+Outgrowing AFOs; new pair ordered.
+EXAM: Ankle ROM full. Standing radiographs reviewed: calcaneal pitch within normal limits.
+Walks with heel strike, rare toe walking.
+Plan: follow up as needed."
+DEMO-0195,DP048,2024-10-01,Clinic note,"HISTORY: 4 yo male with idiopathic toe walking.
+Wears bilateral SMOs; no skin issues.
+EXAM: Dorsiflexion to neutral with knee straight, 20 degrees with knee bent. Standing radiographs reviewed: calcaneal pitch within normal limits.
+Gait: intermittent toe walking, able to heel strike when prompted.
+Plan: surgery scheduled for gastrocnemius recession."
+DEMO-0196,DP027,2024-10-27,Clinic note,"HISTORY: 13 yo female with cerebral palsy, spastic diplegia, and equinus.
+Completed serial casting x3 with improvement in dorsiflexion.
+EXAM: DF knee extended 5° right, 0° left. Knee flexed 15 degrees. Mild hindfoot valgus, flexible.
+Gait: intermittent toe walking, able to heel strike when prompted.
+Plan: discussed Achilles lengthening versus gastrocnemius recession; family will consider."
+DEMO-0197,DP089,2024-10-22,Clinic note,"HISTORY: 3 yo female with cerebral palsy, spastic diplegia, and equinus.
+Not wearing the AFOs much due to discomfort.
+EXAM: Ankle dorsiflexion with knee extended is 15 degrees bilaterally; with knee flexed 5 degrees. 
+Gait: constant toe walking, no heel strike.
+Plan: new AFOs ordered. Follow up in 4 months."
+DEMO-0198,DP090,2022-11-06,Clinic note,"HISTORY: Follow up for 11 yo male with Achilles contracture.
+No bracing at this time.
+EXAM: Dorsiflexion to neutral with knee straight, 10 degrees with knee bent. Pes planus, corrects on toe rise.
+Toe walks most of the time. Stable from prior.
+Plan: discussed Achilles lengthening versus gastrocnemius recession; family will consider."
+DEMO-0199,DP078,2023-05-18,Clinic note,"HISTORY: 14 year old female seen for bilateral heel cord tightness.
+Not wearing the AFOs much due to discomfort.
+EXAM: Dorsiflexion to neutral with knee straight, 10 degrees with knee bent. Pes planus, corrects on toe rise.
+Toe walks most of the time. Stable from prior.
+Plan: surgery scheduled for gastrocnemius recession."
+DEMO-0200,DP033,2025-07-24,Clinic note,"HISTORY: Follow up for 2 yo male with Achilles contracture.
+AFOs fit well. Parent reports he wears them most of the time.
+EXAM: DF knee extended 5° right, 0° left. Knee flexed 5 degrees. 
+Heel-toe gait today. Improved compared with last visit.
+Plan: continue stretching. Consider serial casting if no improvement."
+DEMO-0201,DP057,2024-01-20,Clinic note,"HISTORY: 8 y.o. female referred for toe walking since starting to walk.
+Serial casting #2 applied today in maximal dorsiflexion.
+EXAM: Dorsiflexion to neutral with knee straight, 20 degrees with knee bent. 
+Walks with heel strike, rare toe walking.
+Plan: continue stretching. Consider serial casting if no improvement."
+DEMO-0202,DP073,2024-03-14,Clinic note,"HISTORY: 13 year old female seen for bilateral heel cord tightness.
+Wearing AFOs, schedule not specified.
+EXAM: Dorsiflexion to neutral with knee straight, 15 degrees with knee bent. 
+Heel-toe gait today. Improved compared with last visit.
+Plan: discussed Achilles lengthening versus gastrocnemius recession; family will consider."
+DEMO-0203,DP088,2022-09-20,Clinic note,"HISTORY: 2 yo female with idiopathic toe walking.
+Not wearing the AFOs much due to discomfort.
+EXAM: DF knee extended -5° right, 0° left. Knee flexed 5 degrees. Standing radiographs reviewed: calcaneal pitch within normal limits.
+Gait: constant toe walking, no heel strike.
+Plan: surgery scheduled for gastrocnemius recession."
+DEMO-0204,DP059,2023-02-01,Clinic note,"HISTORY: 11 yo male with idiopathic toe walking.
+AFOs fit well. Parent reports he wears them most of the time.
+EXAM: Ankle ROM full. Standing radiographs reviewed: calcaneal pitch within normal limits.
+Heel-toe gait today. Improved compared with last visit.
+Plan: continue stretching. Consider serial casting if no improvement."
+DEMO-0205,DP030,2023-11-25,Clinic note,"HISTORY: Follow up for 11 yo male with Achilles contracture.
+Discussed serial casting; family agrees to start next week.
+EXAM: Ankle ROM full. Mild hindfoot valgus, flexible.
+Gait: intermittent toe walking, able to heel strike when prompted.
+Plan: follow up as needed."
+DEMO-0206,DP081,2022-10-27,Clinic note,"HISTORY: Follow up for 3 yo female with Achilles contracture.
+Not wearing the AFOs much due to discomfort.
+EXAM: Ankle ROM full. 
+Gait: intermittent toe walking, able to heel strike when prompted.
+Plan: surgery scheduled for gastrocnemius recession."
+DEMO-0207,DP034,2024-02-24,Clinic note,"HISTORY: 11 y.o. female referred for toe walking since starting to walk.
+Currently wearing SMOs daily for school.
+EXAM: Ankle ROM full. Pes planus, corrects on toe rise.
+Gait: constant toe walking, no heel strike.
+Plan: new AFOs ordered. Follow up in 4 months."
+DEMO-0208,DP020,2023-10-02,Clinic note,"HISTORY: 6 y.o. female referred for toe walking since starting to walk.
+Not wearing the AFOs much due to discomfort.
+EXAM: Ankle ROM full. Standing radiographs reviewed: calcaneal pitch within normal limits.
+Gait: constant toe walking, no heel strike.
+Plan: surgery scheduled for gastrocnemius recession."
+DEMO-0209,DP082,2024-12-12,Clinic note,"HISTORY: 7 yo male with idiopathic toe walking.
+Using night splints most nights; family reports good tolerance.
+EXAM: DF knee extended 5° right, -5° left. Knee flexed 15 degrees. 
+Gait: intermittent toe walking, able to heel strike when prompted.
+Plan: surgery scheduled for gastrocnemius recession."
+DEMO-0210,DP045,2025-05-13,Clinic note,"HISTORY: Follow up for 11 yo female with Achilles contracture.
+Wearing AFOs, schedule not specified.
+EXAM: Ankle ROM full. Mild hindfoot valgus, flexible.
+Walks with heel strike, rare toe walking.
+Plan: continue current bracing, return in 3 months."
+DEMO-0211,DP088,2025-11-01,Clinic note,"HISTORY: Follow up for 14 yo female with Achilles contracture.
+Has bilateral AFOs from outside provider.
+EXAM: Ankle dorsiflexion with knee extended is 10 degrees bilaterally; with knee flexed 5 degrees. Mild hindfoot valgus, flexible.
+Heel-toe gait today. Improved compared with last visit.
+Plan: follow up as needed."
+DEMO-0212,DP057,2025-08-08,Clinic note,"HISTORY: 9 y.o. female referred for toe walking since starting to walk.
+Home stretching program only.
+EXAM: Ankle dorsiflexion with knee extended is 10 degrees bilaterally; with knee flexed 10 degrees. Mild hindfoot valgus, flexible.
+Walks with heel strike, rare toe walking.
+Plan: continue current bracing, return in 3 months."
+DEMO-0213,DP030,2023-02-02,Clinic note,"HISTORY: Follow up for 7 yo male with Achilles contracture.
+Wearing AFOs, schedule not specified.
+EXAM: Dorsiflexion to neutral with knee straight, 15 degrees with knee bent. Mild hindfoot valgus, flexible.
+Gait: intermittent toe walking, able to heel strike when prompted.
+Plan: continue stretching. Consider serial casting if no improvement."
+DEMO-0214,DP047,2023-02-25,Clinic note,"HISTORY: 6 yo female with idiopathic toe walking.
+Home stretching program only.
+EXAM: Right ankle lacks 15 degrees to neutral with the knee extended. Pes planus, corrects on toe rise.
+Toe walks most of the time. Stable from prior.
+Plan: new AFOs ordered. Follow up in 4 months."
+DEMO-0215,DP042,2022-10-27,Clinic note,"HISTORY: 2 yo female with cerebral palsy, spastic diplegia, and equinus.
+AFOs fit well. Parent reports he wears them most of the time.
+EXAM: Dorsiflexion to neutral with knee straight, 20 degrees with knee bent. 
+Heel-toe gait today. Improved compared with last visit.
+Plan: follow up as needed."
+DEMO-0216,DP066,2024-01-24,Clinic note,"HISTORY: 11 yo male with cerebral palsy, spastic diplegia, and equinus.
+Outgrowing AFOs; new pair ordered.
+EXAM: Dorsiflexion to neutral with knee straight, 20 degrees with knee bent. Pes planus, corrects on toe rise.
+Gait: intermittent toe walking, able to heel strike when prompted.
+Plan: new AFOs ordered. Follow up in 4 months."
+DEMO-0217,DP059,2022-04-19,Clinic note,"HISTORY: 8 y.o. male referred for toe walking since starting to walk.
+Wearing AFOs, schedule not specified.
+EXAM: Ankle ROM full. Mild hindfoot valgus, flexible.
+Heel-toe gait today. Improved compared with last visit.
+Plan: continue stretching. Consider serial casting if no improvement."
+DEMO-0218,DP036,2022-12-15,Clinic note,"HISTORY: 7 yo male with cerebral palsy, spastic diplegia, and equinus.
+Completed serial casting x1 with improvement in dorsiflexion.
+EXAM: Dorsiflexion to neutral with knee straight, 20 degrees with knee bent. 
+Gait: constant toe walking, no heel strike.
+Plan: continue stretching. Consider serial casting if no improvement."
+DEMO-0219,DP052,2023-07-15,Clinic note,"HISTORY: 13 y.o. female referred for toe walking since starting to walk.
+No bracing at this time.
+EXAM: Ankle dorsiflexion with knee extended is 5 degrees bilaterally; with knee flexed 15 degrees. Standing radiographs reviewed: calcaneal pitch within normal limits.
+Gait: constant toe walking, no heel strike.
+Plan: surgery scheduled for gastrocnemius recession."
+DEMO-0220,DP062,2025-11-21,Clinic note,"HISTORY: 6 yo female with idiopathic toe walking.
+Wears bilateral SMOs; no skin issues.
+EXAM: DF knee extended 15° right, 5° left. Knee flexed 15 degrees. Standing radiographs reviewed: calcaneal pitch within normal limits.
+Walks with heel strike, rare toe walking.
+Plan: new AFOs ordered. Follow up in 4 months."
+DEMO-0221,DP014,2022-06-10,Clinic note,"HISTORY: 2 yo male with cerebral palsy, spastic diplegia, and equinus.
+Not wearing the AFOs much due to discomfort.
+EXAM: DF knee extended 10° right, 10° left. Knee flexed 20 degrees. 
+Gait: intermittent toe walking, able to heel strike when prompted.
+Plan: continue current bracing, return in 3 months."
+DEMO-0222,DP084,2022-05-05,Clinic note,"HISTORY: 4 year old male seen for bilateral heel cord tightness.
+Completed serial casting x4 with improvement in dorsiflexion.
+EXAM: Right ankle lacks 10 degrees to neutral with the knee extended. Standing radiographs reviewed: calcaneal pitch within normal limits.
+Gait: constant toe walking, no heel strike.
+Plan: new AFOs ordered. Follow up in 4 months."
+DEMO-0223,DP011,2025-02-04,Clinic note,"HISTORY: 12 yo female with idiopathic toe walking.
+Wears AFO at night only, about 4 nights per week.
+EXAM: Right ankle lacks 15 degrees to neutral with the knee extended. Standing radiographs reviewed: calcaneal pitch within normal limits.
+Heel-toe gait today. Improved compared with last visit.
+Plan: new AFOs ordered. Follow up in 4 months."
+DEMO-0224,DP007,2023-08-26,Clinic note,"HISTORY: 6 yo female with cerebral palsy, spastic diplegia, and equinus.
+Discussed serial casting; family agrees to start next week.
+EXAM: Dorsiflexion to neutral with knee straight, 5 degrees with knee bent. 
+Gait: intermittent toe walking, able to heel strike when prompted.
+Plan: new AFOs ordered. Follow up in 4 months."
+DEMO-0225,DP077,2025-03-13,Clinic note,"HISTORY: 11 year old female seen for bilateral heel cord tightness.
+Outgrowing AFOs; new pair ordered.
+EXAM: Dorsiflexion to neutral with knee straight, 15 degrees with knee bent. Mild hindfoot valgus, flexible.
+Gait: constant toe walking, no heel strike.
+Plan: continue current bracing, return in 3 months."
+DEMO-0226,DP065,2024-07-10,Clinic note,"HISTORY: 13 year old male seen for bilateral heel cord tightness.
+Wearing AFOs, schedule not specified.
+EXAM: DF knee extended -10° right, 5° left. Knee flexed 15 degrees. 
+Toe walks most of the time. Stable from prior.
+Plan: continue current bracing, return in 3 months."
+DEMO-0227,DP073,2024-06-02,Clinic note,"HISTORY: 8 yo female with idiopathic toe walking.
+Outgrowing AFOs; new pair ordered.
+EXAM: Ankle dorsiflexion with knee extended is -10 degrees bilaterally; with knee flexed 20 degrees. Pes planus, corrects on toe rise.
+Gait: intermittent toe walking, able to heel strike when prompted.
+Plan: surgery scheduled for gastrocnemius recession."
+DEMO-0228,DP071,2024-01-28,Clinic note,"HISTORY: 4 yo female with cerebral palsy, spastic diplegia, and equinus.
+Not wearing the AFOs much due to discomfort.
+EXAM: Ankle ROM full. Mild hindfoot valgus, flexible.
+Gait: intermittent toe walking, able to heel strike when prompted.
+Plan: continue current bracing, return in 3 months."
+DEMO-0229,DP033,2025-06-12,Clinic note,"HISTORY: 2 yo female with cerebral palsy, spastic diplegia, and equinus.
+AFOs fit well. Parent reports he wears them most of the time.
+EXAM: Ankle ROM full. 
+Toe walks most of the time. Stable from prior.
+Plan: discussed Achilles lengthening versus gastrocnemius recession; family will consider."
+DEMO-0230,DP074,2024-11-08,Clinic note,"HISTORY: 10 year old female seen for bilateral heel cord tightness.
+Outgrowing AFOs; new pair ordered.
+EXAM: DF knee extended 10° right, 5° left. Knee flexed 20 degrees. Mild hindfoot valgus, flexible.
+Gait: constant toe walking, no heel strike.
+Plan: continue current bracing, return in 3 months."
+DEMO-0231,DP080,2025-03-08,Clinic note,"HISTORY: 11 yo female with cerebral palsy, spastic diplegia, and equinus.
+Has bilateral AFOs from outside provider.
+EXAM: Dorsiflexion to neutral with knee straight, 10 degrees with knee bent. Pes planus, corrects on toe rise.
+Gait: intermittent toe walking, able to heel strike when prompted.
+Plan: discussed Achilles lengthening versus gastrocnemius recession; family will consider."
+DEMO-0232,DP046,2023-07-17,Clinic note,"HISTORY: 2 yo male with idiopathic toe walking.
+Has bilateral AFOs from outside provider.
+EXAM: Dorsiflexion to neutral with knee straight, 20 degrees with knee bent. Standing radiographs reviewed: calcaneal pitch within normal limits.
+Toe walks most of the time. Stable from prior.
+Plan: continue current bracing, return in 3 months."
+DEMO-0233,DP080,2025-01-11,Clinic note,"HISTORY: 5 y.o. male referred for toe walking since starting to walk.
+EXAM: Ankle dorsiflexion with knee extended is -5 degrees bilaterally; with knee flexed 5 degrees. Pes planus, corrects on toe rise.
+Walks with heel strike, rare toe walking.
+Plan: new AFOs ordered. Follow up in 4 months."
+DEMO-0234,DP086,2022-12-20,Clinic note,"HISTORY: Follow up for 7 yo male with Achilles contracture.
+AFOs fit well. Parent reports he wears them most of the time.
+EXAM: Right ankle lacks 10 degrees to neutral with the knee extended. Mild hindfoot valgus, flexible.
+Toe walks most of the time. Stable from prior.
+Plan: discussed Achilles lengthening versus gastrocnemius recession; family will consider."
+DEMO-0235,DP006,2025-06-07,Clinic note,"HISTORY: Follow up for 2 yo male with Achilles contracture.
+Has bilateral AFOs from outside provider.
+EXAM: Dorsiflexion to neutral with knee straight, 20 degrees with knee bent. Mild hindfoot valgus, flexible.
+Walks with heel strike, rare toe walking.
+Plan: continue current bracing, return in 3 months."
+DEMO-0236,DP049,2024-06-23,Clinic note,"HISTORY: 6 y.o. male referred for toe walking since starting to walk.
+Has bilateral AFOs from outside provider.
+EXAM: Dorsiflexion to neutral with knee straight, 15 degrees with knee bent. Pes planus, corrects on toe rise.
+Gait: intermittent toe walking, able to heel strike when prompted.
+Plan: follow up as needed."
+DEMO-0237,DP021,2024-02-10,Clinic note,"HISTORY: Follow up for 2 yo female with Achilles contracture.
+Serial casting #4 applied today in maximal dorsiflexion.
+EXAM: DF knee extended 15° right, -5° left. Knee flexed 10 degrees. Pes planus, corrects on toe rise.
+Walks with heel strike, rare toe walking.
+Plan: surgery scheduled for gastrocnemius recession."
+DEMO-0238,DP003,2024-06-11,Clinic note,"HISTORY: 14 yo female with cerebral palsy, spastic diplegia, and equinus.
+Outgrowing AFOs; new pair ordered.
+EXAM: Ankle ROM full. Standing radiographs reviewed: calcaneal pitch within normal limits.
+Walks with heel strike, rare toe walking.
+Plan: discussed Achilles lengthening versus gastrocnemius recession; family will consider."
+DEMO-0239,DP052,2023-03-01,Clinic note,"HISTORY: 9 y.o. female referred for toe walking since starting to walk.
+Has bilateral AFOs from outside provider.
+EXAM: Ankle dorsiflexion with knee extended is -5 degrees bilaterally; with knee flexed 20 degrees. 
+Heel-toe gait today. Improved compared with last visit.
+Plan: new AFOs ordered. Follow up in 4 months."
+DEMO-0240,DP027,2024-05-20,Clinic note,"HISTORY: 11 yo female with idiopathic toe walking.
+Serial casting #2 applied today in maximal dorsiflexion.
+EXAM: Right ankle lacks 15 degrees to neutral with the knee extended. Standing radiographs reviewed: calcaneal pitch within normal limits.
+Walks with heel strike, rare toe walking.
+Plan: surgery scheduled for gastrocnemius recession."

@@ -1,7 +1,7 @@
 """Turn raw annotator responses into analysis-ready rows.
 
-Backend neutral: `responses` is a plain dict of question name -> value, the
-shape Argilla returns (str for single choice and text, list for multi choice,
+`responses` is a plain dict of question name -> value, as the annotation
+form saves it (str for single choice and text, list for multi choice,
 list of span dicts for span questions).
 """
 

@@ -1,0 +1,41 @@
+name: test-and-build
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install -e ".[dev]"
+      - run: pytest -q
+
+  build:
+    needs: test
+    strategy:
+      matrix:
+        os: [windows-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install -e ".[dev]"
+      - run: pyinstaller --noconfirm packaging/clincurate.spec
+      # upload-artifact drops Unix permissions, so zip the .app with ditto first
+      - if: runner.os == 'macOS'
+        run: ditto -c -k --keepParent dist/ClinCurate.app dist/ClinCurate-mac.zip
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ClinCurate-${{ runner.os }}
+          path: |
+            dist/ClinCurate.exe
+            dist/ClinCurate-mac.zip
+          if-no-files-found: error

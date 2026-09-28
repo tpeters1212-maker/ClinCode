@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="cc-token" content="{{ csrf_token }}">
+<title>{% block title %}{{ project_title }}{% endblock %} · ClinCurate</title>
+<link rel="icon" href="{{ url_for('static', filename='favicon.svg') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='app.css') }}">
+</head>
+<body class="{% block bodyclass %}{% endblock %}">
+<header class="topbar">
+  <a class="brand" href="{{ url_for('home') }}">ClinCurate</a>
+  <span class="proj">{{ project_title if role else '' }}</span>
+  <nav>
+    {% if role == 'coordinator' %}
+      <a href="{{ url_for('dashboard') }}">Batches</a>
+      <a href="{{ url_for('project_page') }}">Project</a>
+      <a href="{{ url_for('annotate_home') }}">Annotate here</a>
+      <a href="{{ url_for('activity') }}">Activity</a>
+    {% elif role == 'annotator' %}
+      <a href="{{ url_for('annotate_home') }}">My notes</a>
+    {% endif %}
+    {% if role %}<a href="{{ url_for('guide') }}" target="_blank">Guide</a>{% endif %}
+    <form method="post" action="{{ url_for('quit_app') }}" class="inline">
+      <input type="hidden" name="_token" value="{{ csrf_token }}">
+      <button class="linkish" data-confirm="Close ClinCurate? Your work is saved.">Quit</button>
+    </form>
+  </nav>
+</header>
+{% with msgs = get_flashed_messages(with_categories=true) %}
+  {% if msgs %}<div class="flashes">{% for cat, m in msgs %}<div class="flash {{ cat }}">{{ m }}</div>{% endfor %}</div>{% endif %}
+{% endwith %}
+<main class="{% block mainclass %}page{% endblock %}">{% block content %}{% endblock %}</main>
+<script src="{{ url_for('static', filename='common.js') }}"></script>
+{% block scripts %}{% endblock %}
+</body>
+</html>

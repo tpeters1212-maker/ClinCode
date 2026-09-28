@@ -48,6 +48,19 @@ class RegexCue:
 
 
 @dataclass
+class Stratum:
+    name: str
+    label: str
+    patterns: list[re.Pattern]
+
+    def matches(self, text: str) -> bool:
+        return any(p.search(text) for p in self.patterns)
+
+
+OTHER_STRATUM = "other"
+
+
+@dataclass
 class Project:
     id: str
     title: str
@@ -58,6 +71,18 @@ class Project:
     regex_cues: list[RegexCue]
     record_questions: list[Field]
     focus: dict[str, Any]
+    strata: list[Stratum] = field(default_factory=list)
+
+    def stratum_of(self, text: str) -> str:
+        """First matching stratum in schema order, so rarer strata listed
+        first win over broad ones."""
+        for st in self.strata:
+            if st.matches(text):
+                return st.name
+        return OTHER_STRATUM
+
+    def stratum_labels(self) -> dict[str, str]:
+        return {**{st.name: st.label for st in self.strata}, OTHER_STRATUM: "Other"}
 
     def domain(self, name: str) -> Domain:
         for d in self.domains:
@@ -102,7 +127,16 @@ def _parse_field(name: str, raw: dict, domain: str | None) -> Field:
 
 
 def load_schema(path: str | Path) -> Project:
-    raw = yaml.safe_load(Path(path).read_text())
+    return parse_schema(Path(path).read_text(encoding="utf-8"), default_id=Path(path).stem)
+
+
+def parse_schema(text: str, default_id: str = "project") -> Project:
+    try:
+        raw = yaml.safe_load(text)
+    except yaml.YAMLError as e:
+        raise SchemaError(f"not valid YAML: {e}") from e
+    if not isinstance(raw, dict):
+        raise SchemaError("schema must be a YAML mapping")
     proj = raw.get("project") or {}
     missing = {
         "not_documented": "Not documented",
@@ -162,9 +196,21 @@ def load_schema(path: str | Path) -> Project:
         **(raw.get("focus_mode") or {}),
     }
 
+    strata = []
+    for st in raw.get("strata") or []:
+        if st.get("name") in (None, OTHER_STRATUM):
+            raise SchemaError(f"stratum needs a name other than {OTHER_STRATUM!r}")
+        try:
+            pats = [re.compile(p) for p in st.get("patterns", [])]
+        except re.error as e:
+            raise SchemaError(f"stratum {st['name']}: {e}") from e
+        if not pats:
+            raise SchemaError(f"stratum {st['name']}: needs at least one pattern")
+        strata.append(Stratum(st["name"], st.get("label", st["name"]), pats))
+
     return Project(
-        id=proj.get("id", Path(path).stem),
-        title=proj.get("title", Path(path).stem),
+        id=proj.get("id", default_id),
+        title=proj.get("title", default_id),
         unit=proj.get("unit", "note"),
         mode=proj.get("mode", "gold_standard"),
         missing=missing,
@@ -172,4 +218,5 @@ def load_schema(path: str | Path) -> Project:
         regex_cues=regex_cues,
         record_questions=record_questions,
         focus=focus,
+        strata=strata,
     )

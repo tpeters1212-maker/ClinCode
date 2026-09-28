@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+{% block title %}Batches{% endblock %}
+{% block content %}
+<div class="headrow">
+  <h1>Batches</h1>
+  <form method="post" action="{{ url_for('new_batch') }}">
+    <input type="hidden" name="_token" value="{{ csrf_token }}">
+    <button class="primary" {% if not note_count %}disabled title="Import notes first"{% endif %}>Plan a new batch</button>
+  </form>
+</div>
+
+{% if not note_count or not annotators %}
+<div class="callout">
+  <strong>Getting started.</strong>
+  {% if not note_count %}<a href="{{ url_for('project_page') }}">Import notes</a>{% endif %}
+  {% if not note_count and not annotators %} and {% endif %}
+  {% if not annotators %}<a href="{{ url_for('project_page') }}#annotators">add annotators</a>{% endif %}
+  before planning batches.
+</div>
+{% endif %}
+
+{% if batches %}
+<table class="grid">
+  <thead><tr><th>Order</th><th>Batch</th><th>Status</th><th>Notes</th><th>Progress</th><th></th></tr></thead>
+  <tbody>
+  {% for row in batches %}{% set b = row.b %}
+  <tr>
+    <td class="order">
+      <form method="post" action="{{ url_for('batch_action', batch_id=b.id, action='up') }}" class="inline"><input type="hidden" name="_token" value="{{ csrf_token }}"><button class="icon" title="Move up" {% if loop.first %}disabled{% endif %}>&uarr;</button></form>
+      <form method="post" action="{{ url_for('batch_action', batch_id=b.id, action='down') }}" class="inline"><input type="hidden" name="_token" value="{{ csrf_token }}"><button class="icon" title="Move down" {% if loop.last %}disabled{% endif %}>&darr;</button></form>
+    </td>
+    <td><a href="{{ url_for('batch_page', batch_id=b.id) }}"><strong>{{ b.name }}</strong></a>{% if b.purpose %}<div class="muted">{{ b.purpose }}</div>{% endif %}</td>
+    <td><span class="pill {{ b.status }}">{{ b.status|capitalize }}</span></td>
+    <td>{{ row.notes }}</td>
+    <td>{% if row.total %}<div class="bar"><span style="width:{{ (100*row.done/row.total)|round(0) }}%"></span></div><small>{{ row.done }} of {{ row.total }} answers submitted</small>{% else %}<span class="muted">Not started</span>{% endif %}</td>
+    <td><a class="button" href="{{ url_for('batch_page', batch_id=b.id) }}">Open</a></td>
+  </tr>
+  {% endfor %}
+  </tbody>
+</table>
+{% else %}
+<p class="muted">No batches yet.</p>
+{% endif %}
+
+<div class="cards two">
+  <section class="card">
+    <h2>Notes available</h2>
+    <table class="grid compact">
+      <thead><tr><th>Stratum</th><th class="num">Total</th><th class="num">Not yet in a batch</th></tr></thead>
+      <tbody>{% for s in strata %}<tr><td>{{ s.label }}</td><td class="num">{{ s.total }}</td><td class="num">{{ s.unused }}</td></tr>{% endfor %}</tbody>
+    </table>
+  </section>
+  <section class="card">
+    <h2>Collect results</h2>
+    <p>Upload the results files annotators send back. Newer answers replace older ones.</p>
+    <form method="post" action="{{ url_for('upload_results') }}" enctype="multipart/form-data" class="stack">
+      <input type="hidden" name="_token" value="{{ csrf_token }}">
+      <input type="file" name="results" accept=".ccres" multiple required>
+      <button>Import results</button>
+    </form>
+    <h3>Export answers</h3>
+    <p><a class="button" href="{{ url_for('export', shape='wide') }}">One row per note (CSV)</a>
+       <a class="button" href="{{ url_for('export', shape='long') }}">One row per answer (CSV)</a>
+       <a class="button" href="{{ url_for('export', shape='evidence') }}">Evidence (CSV)</a></p>
+  </section>
+</div>
+{% endblock %}
