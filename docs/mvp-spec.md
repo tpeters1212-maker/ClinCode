@@ -53,6 +53,13 @@ Moving work between laptops [MVP]:
 
 If everyone annotates on one coordinator laptop, steps 1 to 5 are not needed.
 
+Data custody [MVP]. The coordinator laptop is the system of record; student laptops hold temporary working copies.
+
+- The student's queue warns whenever answers exist that are newer than the last results file.
+- "Remove from this laptop" appears once every answer has been saved to a results file. It asks the student to confirm that the coordinator imported the file, then deletes the batch, its notes and answers. Secure delete, VACUUM and a WAL checkpoint ensure note text does not remain in the database files (tested).
+- The coordinator's batch page shows when each student's latest results file was imported.
+- The dashboard shows the time of the last backup and offers an encrypted backup (`.ccbak`, full database, AES-256-GCM under the project passphrase). The welcome screen restores a backup onto a new laptop; a laptop that already has a project refuses a restore.
+
 ## 5. Coordinator workflow
 
 **Setup [MVP].** Choose the bundled pediatric foot and ankle schema (or upload a YAML), set the project passphrase, import notes from CSV (`note_id`, `text`, optional `patient_id`, `note_date`, `note_type`), add annotators. Each note gets a sampling stratum from the schema on import.
@@ -130,7 +137,7 @@ Sampling strata, in priority order (the first match wins):
 ## 10. Distribution to laptops
 
 - GitHub Actions builds `ClinCurate.exe` (Windows) and `ClinCurate.app` (macOS) on every push. The Linux build runs from the same spec file.
-- The builds are unsigned. Windows SmartScreen and macOS Gatekeeper will warn. For UCSF-managed laptops, ask IT to sign the builds, or to allow-list or deploy them. This is the main deployment dependency.
+- The builds are unsigned. Windows SmartScreen and macOS Gatekeeper ask once on first launch; the README gives the clicks. Use is covered by the study IRB approval.
 - Updating: replace the app file. The data folder is untouched.
 
 ## 11. Next steps
@@ -139,13 +146,10 @@ Sampling strata, in priority order (the first match wins):
 2. [Soon] Model prediction import and model-versus-human report.
 3. [Soon] Per-question precision targets and stopping display.
 4. [Soon] Coordinator password, for when students annotate on the coordinator laptop.
-5. [Soon] Backup and restore of the data folder from the interface.
-6. [Future] Weighted estimates, adaptive sampling, assisted-mode experiment.
+5. [Future] Weighted estimates, adaptive sampling, assisted-mode experiment.
 
 ## 12. Open questions
 
-1. Can UCSF IT sign or allow-list the app, and on which laptop platforms?
-2. Which approved storage should carry batch and results files?
-3. Will students annotate on their own laptops, or on shared study laptops?
-4. Batch size and double-annotation share (defaults: set per batch; 20 percent suggested).
-5. Per-question precision targets (EBSD).
+1. Which approved storage carries batch, results and backup files?
+2. Batch size and double-annotation share (set per batch; 20 percent suggested).
+3. Per-question precision targets (EBSD).

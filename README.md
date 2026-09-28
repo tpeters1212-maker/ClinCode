@@ -14,11 +14,24 @@ The first use case is pediatric foot and ankle phenotypes at UCSF (orthoses, dor
 
 Coordinators and annotators: open `ClinCurate.exe` (Windows) or `ClinCurate.app` (macOS). The app opens a browser tab. Use **Quit** in the top bar to close it. Data stays in a `ClinCurate` folder in your home directory.
 
-The builds come from GitHub Actions (`test-and-build` workflow, artifacts `ClinCurate-Windows` and `ClinCurate-macOS`). They are unsigned; on managed laptops, IT needs to sign or allow-list them.
+The builds come from GitHub Actions (`test-and-build` workflow, artifacts `ClinCurate-Windows` and `ClinCurate-macOS`).
 
-## Moving work between laptops
+First launch: the app is not code-signed, so the operating system asks once.
 
-Batch files (`.ccpkg`) and results files (`.ccres`) are encrypted with the project passphrase. Results files contain answers only, no note text. Move them only through UCSF-approved storage, and share the passphrase separately.
+- Windows: on "Windows protected your PC", click **More info**, then **Run anyway**.
+- macOS: unzip, right-click **ClinCurate.app**, choose **Open**, then **Open** again. If macOS still refuses, open System Settings, Privacy & Security, and click **Open Anyway**.
+
+## Where the data lives
+
+The coordinator's laptop holds the permanent record: all notes, every batch, and every submitted answer. Student laptops hold a working copy of their own batch only.
+
+1. The coordinator starts a batch and downloads one batch file (`.ccpkg`) per student.
+2. The student opens it in ClinCurate, annotates, and clicks **Save results file for coordinator** (`.ccres`: answers only, no note text). The app warns whenever there are answers not yet sent.
+3. The coordinator imports the results file. The batch page shows when each student's latest file arrived.
+4. The coordinator tells the student it arrived. The student clicks **Remove from this laptop**, which deletes the notes and answers from their machine.
+5. The coordinator downloads an encrypted backup (`.ccbak`) after importing results and keeps it in PHI-approved storage. A backup restores onto a new laptop from the welcome screen.
+
+All three file types are encrypted with the project passphrase. Share the passphrase separately from the files.
 
 ## Development
 

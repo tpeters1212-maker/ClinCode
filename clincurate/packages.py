@@ -125,10 +125,21 @@ def import_package(store: Store, data: bytes, pass_in: str) -> dict:
 
 # annotator -> coordinator ------------------------------------------------------
 
+def unsent_changes(store: Store, batch_id: int, annotator: str) -> bool:
+    """True when this laptop has answers newer than the last results file."""
+    b = store.batch(batch_id)
+    last = store.last_change(batch_id, annotator)
+    saved = store.get(f"results_saved:{b['uid']}:{annotator}")
+    return bool(last) and (saved is None or last > saved)
+
+
 def export_results(store: Store, batch_id: int, annotator: str) -> bytes:
     b = store.batch(batch_id)
     items = store.items(batch_id=batch_id, annotator=annotator)
     store.log(annotator, "export_results", b["name"])
+    # Records what the student has sent, so the app can say whether newer
+    # answers are still unsent and when it is safe to remove the batch.
+    store.put(f"results_saved:{b['uid']}:{annotator}", store.last_change(batch_id, annotator) or now())
     return seal({
         "format": RESULTS_FORMAT, "version": 1, "created_at": now(),
         "batch_uid": b["uid"], "batch_name": b["name"], "annotator": annotator,
@@ -166,6 +177,7 @@ def import_results(store: Store, data: bytes) -> dict:
                 updated += 1
             else:
                 unchanged += 1
+    store.put(f"results_received:{b['uid']}:{who}", res["created_at"])
     store.log("coordinator", "import_results", f"{res['batch_name']} from {who}: {updated} updated")
     return {"batch": res["batch_name"], "annotator": who, "updated": updated,
             "unchanged": unchanged, "mismatched": mismatched}

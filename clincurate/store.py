@@ -60,6 +60,8 @@ class Store:
         self.db.row_factory = sqlite3.Row
         self.db.execute("PRAGMA journal_mode=WAL")
         self.db.execute("PRAGMA foreign_keys=ON")
+        # Deleted rows are overwritten with zeros rather than left in free pages.
+        self.db.execute("PRAGMA secure_delete=ON")
         self.db.executescript(SCHEMA_SQL)
         self._project: Project | None = None
 
@@ -265,3 +267,25 @@ class Store:
                    AVG(CASE WHEN status='submitted' THEN seconds END) AS avg_seconds
                FROM items""" + (" WHERE batch_id=?" if batch_id is not None else "") + " GROUP BY annotator ORDER BY annotator"
         return [dict(r) for r in self.db.execute(q, (batch_id,) if batch_id is not None else ())]
+
+    # custody --------------------------------------------------------------
+    def last_change(self, batch_id: int, annotator: str) -> str | None:
+        return self.db.execute("SELECT MAX(updated_at) FROM items WHERE batch_id=? AND annotator=?",
+                               (batch_id, annotator)).fetchone()[0]
+
+    def purge_batch(self, batch_id: int) -> int:
+        """Annotator laptop: delete a batch and every note that no other batch
+        on this laptop still uses. Returns the number of notes removed."""
+        with self.tx() as db:
+            ids = [r[0] for r in db.execute("SELECT note_id FROM batch_notes WHERE batch_id=?", (batch_id,))]
+            for t in ("items", "batch_notes", "batch_strata"):
+                db.execute(f"DELETE FROM {t} WHERE batch_id=?", (batch_id,))
+            db.execute("DELETE FROM batches WHERE id=?", (batch_id,))
+            removed = 0
+            for nid in ids:
+                if not db.execute("SELECT 1 FROM batch_notes WHERE note_id=?", (nid,)).fetchone():
+                    removed += db.execute("DELETE FROM notes WHERE note_id=?", (nid,)).rowcount
+        # Reclaim the freed pages so deleted note text does not linger in the file.
+        self.db.execute("VACUUM")
+        self.db.execute("PRAGMA wal_checkpoint(TRUNCATE)")
+        return removed

@@ -216,3 +216,6 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# ClinCurate build spec is source, not a generated file
+!packaging/clincurate.spec

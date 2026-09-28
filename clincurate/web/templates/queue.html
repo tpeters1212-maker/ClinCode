@@ -11,6 +11,13 @@
     <h2>{{ bs.name }} {% if bs.status == 'closed' %}<span class="pill closed">Closed</span>{% endif %}</h2>
     {% if role == 'annotator' %}<a class="button" href="{{ url_for('download_results', who=who, batch_id=bid) }}">Save results file for coordinator</a>{% endif %}
   </div>
+  {% if role == 'annotator' %}
+    {% if bs.unsent %}
+    <div class="callout">You have answers the coordinator does not have yet. Click <strong>Save results file for coordinator</strong> and send the file.</div>
+    {% elif bs.sent %}
+    <p class="muted">Results file saved {{ bs.sent[:16].replace('T', ' ') }} UTC. No newer answers since.</p>
+    {% endif %}
+  {% endif %}
   <div class="bar big"><span style="width:{{ (100*bs.done/bs.rows|length)|round(0) }}%"></span></div>
   <p><strong>{{ bs.rows|length - bs.done }} notes left</strong> of {{ bs.rows|length }}.{% if bs.drafts %} {{ bs.drafts }} started but not submitted.{% endif %}</p>
   <details {% if bs.rows|length <= 30 %}open{% endif %}><summary>All notes in this batch</summary>
@@ -18,6 +25,13 @@
     <li class="{{ it.status }}"><a href="{{ url_for('annotate_item', who=who, item_id=it.id) }}">Note {{ loop.index }}</a>
       <span class="pill {{ it.status }}">{{ {'pending': 'To do', 'draft': 'Started', 'submitted': 'Done'}[it.status] }}</span></li>
   {% endfor %}</ol></details>
+  {% if role == 'annotator' and bs.sent and not bs.unsent %}
+  <form method="post" action="{{ url_for('remove_batch', who=who, batch_id=bid) }}" class="removebox">
+    <input type="hidden" name="_token" value="{{ csrf_token }}">
+    <p class="muted">When the coordinator confirms they imported your results file, remove these notes from this laptop.</p>
+    <button class="danger" data-confirm="Has the coordinator confirmed they imported your results? This deletes the notes and your answers from this laptop and cannot be undone.">Remove {{ bs.name }} from this laptop</button>
+  </form>
+  {% endif %}
 </section>
 {% endfor %}
 {% endblock %}

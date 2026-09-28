@@ -32,4 +32,13 @@
     </form>
   </section>
 </div>
+<details class="card">
+  <summary><strong>Moving the coordinator to a new laptop? Restore a backup</strong></summary>
+  <form method="post" action="{{ url_for('restore') }}" enctype="multipart/form-data" class="stack">
+    <input type="hidden" name="_token" value="{{ csrf_token }}">
+    <label>Backup file (.ccbak)<input type="file" name="backup" accept=".ccbak" required></label>
+    <label>Project passphrase<input type="password" name="passphrase" required autocomplete="off"></label>
+    <button>Restore</button>
+  </form>
+</details>
 {% endblock %}

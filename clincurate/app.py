@@ -18,12 +18,12 @@ from pathlib import Path
 from flask import (Flask, Response, abort, flash, g, jsonify, redirect, render_template, request,
                    send_file, url_for)
 
-from . import packages, reports, sampling
+from . import backup, packages, reports, sampling
 from .focus import merged_snippets
 from .guide import guide_sections, render_markdown
 from .highlight import Highlighter
 from .schema import SCREEN_QUESTION, OTHER_STRATUM, SchemaError
-from .store import Store
+from .store import Store, now as _now
 
 HERE = Path(__file__).parent
 _LOCAL_HOSTS = {"127.0.0.1", "localhost"}
@@ -144,6 +144,7 @@ def create_app(db_path: str | Path, testing: bool = False) -> Flask:
             batches.append({"b": b, "total": total, "done": done,
                             "notes": len(store.batch_notes(b["id"]))})
         return render_template("dashboard.html", batches=batches, strata=store.strata_counts(),
+                               last_backup=store.get("last_backup"),
                                note_count=store.note_count(), annotators=store.annotators())
 
     @app.get("/admin/project")
@@ -255,6 +256,8 @@ def create_app(db_path: str | Path, testing: bool = False) -> Flask:
             "batch.html", b=b, quotas=json.loads(b["quotas"]), chosen=json.loads(b["annotators"]),
             strata=store.strata_counts(), labels=labels, drawn=drawn, notes=notes, plan=plan,
             progress=store.progress(batch_id), annotators=store.annotators(),
+            received={p["annotator"]: store.get(f"results_received:{b['uid']}:{p['annotator']}")
+                      for p in store.progress(batch_id)},
             agreement=reports.agreement(store, batch_id) if b["status"] != "planned" else [],
             disagreements=reports.disagreement_list(store, batch_id) if b["status"] != "planned" else [],
             problems=reports.problems(store, batch_id) if b["status"] != "planned" else [],
@@ -412,6 +415,10 @@ def create_app(db_path: str | Path, testing: bool = False) -> Flask:
         for bs in batches.values():
             bs["done"] = sum(i["status"] == "submitted" for i in bs["rows"])
             bs["drafts"] = sum(i["status"] == "draft" for i in bs["rows"])
+        if store.role == "annotator":
+            for bid, bs in batches.items():
+                bs["unsent"] = packages.unsent_changes(store, bid, who)
+                bs["sent"] = store.get(f"results_saved:{store.batch(bid)['uid']}:{who}")
         return render_template("queue.html", who=who, batches=batches)
 
     @app.get("/annotate/<who>/next")
@@ -463,6 +470,46 @@ def create_app(db_path: str | Path, testing: bool = False) -> Flask:
             return redirect(url_for("queue", who=who))
         return send_file(_bytes(data), as_attachment=True, download_name=_safe(f"{b['name']}_{who}_results") + ".ccres",
                          mimetype="application/octet-stream")
+
+    @app.post("/annotate/<who>/remove/<int:batch_id>")
+    def remove_batch(who, batch_id):
+        if store.role != "annotator":
+            abort(403)
+        b = batch_or_404(batch_id)
+        if packages.unsent_changes(store, batch_id, who):
+            flash("Save a results file first: some answers have not been sent.", "error")
+            return redirect(url_for("queue", who=who))
+        n = store.purge_batch(batch_id)
+        store.log(who, "remove_batch", f"{b['name']} ({n} notes deleted)")
+        flash(f"{b['name']} and its {n} notes were removed from this laptop.")
+        return redirect(url_for("annotate_home") if store.items() else url_for("done"))
+
+    @app.get("/done")
+    def done():
+        return render_template("done.html")
+
+    @app.get("/admin/backup")
+    @coordinator_only
+    def download_backup():
+        data = backup.make_backup(store)
+        store.put("last_backup", _now())
+        return send_file(_bytes(data), as_attachment=True, mimetype="application/octet-stream",
+                         download_name=_safe(f"clincurate_backup_{_now()[:10]}") + ".ccbak")
+
+    @app.post("/setup/restore")
+    def restore():
+        f = request.files.get("backup")
+        if not f or not f.filename:
+            flash("Choose a backup file.", "error")
+            return redirect(url_for("home"))
+        try:
+            backup.restore_backup(store, f.read(), request.form.get("passphrase", ""))
+        except packages.PackageError as e:
+            flash(str(e), "error")
+            return redirect(url_for("home"))
+        highlighter_cache.clear()
+        flash("Project restored from backup.")
+        return redirect(url_for("home"))
 
     # helpers ---------------------------------------------------------------
     def _next_open(who: str, after: int | None = None) -> int | None:

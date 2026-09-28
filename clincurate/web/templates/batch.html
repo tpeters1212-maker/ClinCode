@@ -70,18 +70,19 @@
 <section class="card">
   <h2>Progress</h2>
   <table class="grid">
-    <thead><tr><th>Annotator</th><th>Progress</th><th class="num">Left</th><th class="num">Drafts</th><th class="num">Flagged</th><th class="num">Avg min/note</th><th>Batch file</th></tr></thead>
+    <thead><tr><th>Annotator</th><th>Progress</th><th class="num">Left</th><th class="num">Drafts</th><th class="num">Flagged</th><th class="num">Avg min/note</th><th>Last results file</th><th>Batch file</th></tr></thead>
     <tbody>
     {% for p in progress %}
     <tr><td>{{ p.annotator }}</td>
       <td><div class="bar"><span style="width:{{ (100*(p.submitted or 0)/p.total)|round(0) }}%"></span></div><small>{{ p.submitted or 0 }} of {{ p.total }}</small></td>
       <td class="num">{{ p.total - (p.submitted or 0) }}</td><td class="num">{{ p.drafts or 0 }}</td><td class="num">{{ p.flagged or 0 }}</td>
       <td class="num">{{ ((p.avg_seconds or 0)/60)|round(1) if p.avg_seconds else '' }}</td>
+      <td>{{ received[p.annotator][:16].replace('T', ' ') if received[p.annotator] else '' }}</td>
       <td>{% if b.status == 'active' %}<a class="button" href="{{ url_for('download_package', batch_id=b.id, annotator=p.annotator) }}">Download for {{ p.annotator.split()[0] }}</a>{% endif %}</td></tr>
     {% endfor %}
     </tbody>
   </table>
-  <p class="muted">Annotators on their own laptops: send them their batch file through UCSF-approved storage, and give them the passphrase separately. Annotators on this laptop: use <a href="{{ url_for('annotate_home') }}">Annotate here</a>.</p>
+  <p class="muted">Annotators on their own laptops: send them their batch file through UCSF-approved storage, and give them the passphrase separately. Annotators on this laptop: use <a href="{{ url_for('annotate_home') }}">Annotate here</a>. After importing a student's results, tell them so they can remove the notes from their laptop.</p>
   <form method="post" action="{{ url_for('upload_results') }}" enctype="multipart/form-data" class="row">
     <input type="hidden" name="_token" value="{{ csrf_token }}">
     <input type="file" name="results" accept=".ccres" multiple required>

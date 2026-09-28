@@ -19,6 +19,13 @@
 </div>
 {% endif %}
 
+<div class="callout {{ '' if last_backup else 'warn' }}">
+  <strong>This laptop holds the permanent record.</strong>
+  {% if last_backup %}Last backup {{ last_backup[:16].replace('T', ' ') }} UTC.{% else %}No backup yet.{% endif %}
+  <a class="button" href="{{ url_for('download_backup') }}">Download encrypted backup</a>
+  <span class="muted">Keep it in PHI-approved storage. Back up after importing results.</span>
+</div>
+
 {% if batches %}
 <table class="grid">
   <thead><tr><th>Order</th><th>Batch</th><th>Status</th><th>Notes</th><th>Progress</th><th></th></tr></thead>

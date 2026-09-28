@@ -158,3 +158,73 @@ def test_dual_needs_two_annotators(coord):
     sampling.draw(store, b)
     with pytest.raises(sampling.BatchError):
         sampling.start(store, b)
+
+
+def _start_small_batch(store, people=("Avery Kim",)):
+    b = store.create_batch("Small", quotas={"afo_unspecified": 3}, annotators=list(people), dual_fraction=0)
+    sampling.draw(store, b)
+    sampling.start(store, b)
+    return b
+
+
+def test_student_custody_and_removal(coord, tmp_path):
+    import io
+    app, c, tok = coord
+    store = app.extensions["clincurate_store"]
+    b = _start_small_batch(store)
+    pkg = c.get(f"/admin/batches/{b}/package/Avery Kim").data
+
+    app2, c2, tok2 = client_for(tmp_path / "student.db")
+    post(c2, tok2, "/package/import", data={"package": (io.BytesIO(pkg), "p.ccpkg"), "passphrase": PASS},
+         content_type="multipart/form-data")
+    s2 = app2.extensions["clincurate_store"]
+    bid2 = s2.items()[0]["batch_id"]
+
+    # removal refused while answers are unsent
+    it = s2.items()[0]
+    c2.post(f"/api/item/{it['id']}", json={"responses": {"note_usable": "Yes"}, "status": "draft"},
+            headers={"X-CC-Token": tok2})
+    assert packages.unsent_changes(s2, bid2, "Avery Kim")
+    assert "not been sent" in post(c2, tok2, f"/annotate/Avery Kim/remove/{bid2}", follow_redirects=True).get_data(as_text=True)
+    assert s2.note_count() == 3
+
+    res = c2.get(f"/annotate/Avery Kim/results/{bid2}").data
+    assert not packages.unsent_changes(s2, bid2, "Avery Kim")
+    assert "Remove Small from this laptop" in c2.get("/annotate/Avery Kim").get_data(as_text=True)
+
+    # coordinator imports and sees when results arrived
+    post(c, tok, "/admin/results", data={"results": (io.BytesIO(res), "r.ccres")}, content_type="multipart/form-data")
+    assert store.get(f"results_received:{store.batch(b)['uid']}:Avery Kim")
+
+    r = post(c2, tok2, f"/annotate/Avery Kim/remove/{bid2}")
+    assert r.status_code == 302
+    assert s2.note_count() == 0 and not s2.items()
+    for f in tmp_path.glob("student.db*"):  # main file plus any -wal / -shm
+        assert b"HISTORY" not in f.read_bytes()
+
+    # coordinator may not use the student-only removal
+    assert post(c, tok, f"/annotate/Avery Kim/remove/{b}").status_code == 403
+
+
+def test_backup_and_restore(coord, tmp_path):
+    import io
+    app, c, tok = coord
+    store = app.extensions["clincurate_store"]
+    _start_small_batch(store)
+    data = c.get("/admin/backup").data
+    assert data.startswith(b"CLINCURATE-BACKUP1") and b"HISTORY" not in data
+    assert store.get("last_backup")
+
+    app2, c2, tok2 = client_for(tmp_path / "new_laptop.db")
+    post(c2, tok2, "/setup/restore", data={"backup": (io.BytesIO(data), "b.ccbak"), "passphrase": "nope nope nope"},
+         content_type="multipart/form-data")
+    s2 = app2.extensions["clincurate_store"]
+    assert s2.role is None
+    post(c2, tok2, "/setup/restore", data={"backup": (io.BytesIO(data), "b.ccbak"), "passphrase": PASS},
+         content_type="multipart/form-data")
+    assert s2.role == "coordinator" and s2.note_count() == 240 and len(s2.batches()) == 1
+    assert c2.get("/admin").status_code == 200
+    # a laptop with a project refuses a restore
+    r = post(c, tok, "/setup/restore", data={"backup": (io.BytesIO(data), "b.ccbak"), "passphrase": PASS},
+             content_type="multipart/form-data", follow_redirects=True)
+    assert "already has a project" in r.get_data(as_text=True)
