@@ -14,12 +14,15 @@ The first use case is pediatric foot and ankle phenotypes at UCSF (orthoses, dor
 
 Coordinators and annotators: open `ClinCurate.exe` (Windows) or `ClinCurate.app` (macOS). The app opens a browser tab. Use **Quit** in the top bar to close it. Data stays in a `ClinCurate` folder in your home directory.
 
-The builds come from GitHub Actions (`test-and-build` workflow, artifacts `ClinCurate-Windows` and `ClinCurate-macOS`).
+Download from the repository's **Releases** page, release "ClinCurate (latest build)":
+
+- Mac: `ClinCurate.dmg`. Open it and drag ClinCurate into Applications. Built for Apple Silicon (M1 and later).
+- Windows: `ClinCurate.exe`. Save it anywhere and double-click it.
 
 First launch: the app is not code-signed, so the operating system asks once.
 
 - Windows: on "Windows protected your PC", click **More info**, then **Run anyway**.
-- macOS: unzip, right-click **ClinCurate.app**, choose **Open**, then **Open** again. If macOS still refuses, open System Settings, Privacy & Security, and click **Open Anyway**.
+- macOS: right-click **ClinCurate** in Applications, choose **Open**, then **Open** again. If macOS still refuses, open System Settings, Privacy & Security, and click **Open Anyway**.
 
 ## Where the data lives
 

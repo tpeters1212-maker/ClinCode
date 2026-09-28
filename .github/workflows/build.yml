@@ -29,13 +29,40 @@ jobs:
           python-version: "3.11"
       - run: pip install -e ".[dev]"
       - run: pyinstaller --noconfirm packaging/clincurate.spec
-      # upload-artifact drops Unix permissions, so zip the .app with ditto first
+      # Standard drag-to-Applications disk image
       - if: runner.os == 'macOS'
-        run: ditto -c -k --keepParent dist/ClinCurate.app dist/ClinCurate-mac.zip
+        run: |
+          mkdir -p dmg
+          cp -R dist/ClinCurate.app dmg/
+          ln -s /Applications dmg/Applications
+          hdiutil create -volname ClinCurate -srcfolder dmg -ov -format UDZO dist/ClinCurate.dmg
       - uses: actions/upload-artifact@v4
         with:
           name: ClinCurate-${{ runner.os }}
           path: |
             dist/ClinCurate.exe
-            dist/ClinCurate-mac.zip
+            dist/ClinCurate.dmg
           if-no-files-found: error
+
+  # Publishes the latest build as direct downloads on the Releases page.
+  release:
+    needs: build
+    if: github.event_name == 'push'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          path: out
+          merge-multiple: true
+      - env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+        run: |
+          ls -la out
+          gh release delete latest --repo "$REPO" --yes --cleanup-tag || true
+          gh release create latest out/ClinCurate.dmg out/ClinCurate.exe \
+            --repo "$REPO" --target "$GITHUB_SHA" --prerelease \
+            --title "ClinCurate (latest build)" \
+            --notes "Mac: open ClinCurate.dmg and drag ClinCurate to Applications. Windows: download ClinCurate.exe and double-click it. The app is not code-signed; see the README for the one-time first-launch steps. Built from ${GITHUB_SHA::7}."
